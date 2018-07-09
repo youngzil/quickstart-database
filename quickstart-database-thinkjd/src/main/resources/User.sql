@@ -1,0 +1,7 @@
+CREATE TABLE `user` (
+  `ID` int(10) DEFAULT NULL,
+  `AGE` tinyint(3) DEFAULT NULL,
+  `NAME` varchar(50) DEFAULT NULL,
+  `WEIGHT` float(3,0) DEFAULT NULL,
+  `SEX` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
