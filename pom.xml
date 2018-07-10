@@ -24,15 +24,15 @@
 	</dependencies>
 
 	<modules>
-		<module>quickstart-database-mycat</module>
-		<module>quickstart-database-oceanbase</module>
-		<module>quickstart-database-zdal</module>
-		<module>quickstart-database-liquibase</module>
-		<module>quickstart-database-mybatis-plus</module>
-		<module>quickstart-database-mybatis</module>
-		<module>quickstart-database-datasource</module>
-		<module>quickstart-database-sharding-sphere</module>
-		<module>quickstart-database-thinkjd</module>
+		<module>quickstart-mycat</module>
+		<module>quickstart-oceanbase</module>
+		<module>quickstart-zdal</module>
+		<module>quickstart-liquibase</module>
+		<module>quickstart-mybatis-plus</module>
+		<module>quickstart-mybatis</module>
+		<module>quickstart-datasource</module>
+		<module>quickstart-sharding-sphere</module>
+		<module>quickstart-thinkjd</module>
 	</modules>
 
 </project>

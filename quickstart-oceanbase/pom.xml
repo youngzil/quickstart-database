@@ -6,29 +6,21 @@
 		<groupId>org.quickstart</groupId>
 		<artifactId>quickstart-database</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath> <!-- lookup parent from repository -->
 	</parent>
 
-
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-database-sharding-sphere</artifactId>
+	<artifactId>quickstart-oceanbase</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}-${project.version}</name>
 	<url>http://maven.apache.org</url>
-	<description>Demo project for Spring Boot Admin</description>
+	<description>Demo project for XXX</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>io.shardingjdbc</groupId>
-			<artifactId>sharding-jdbc-core</artifactId>
-			<version>2.0.2</version>
-		</dependency>
-
-
 	</dependencies>
 
 </project>
