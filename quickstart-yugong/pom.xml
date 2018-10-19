@@ -20,6 +20,7 @@
 		<!-- compiler settings properties -->
 		<java_source_version>1.6</java_source_version>
 		<java_target_version>1.6</java_target_version>
+		<java.version>1.8</java.version>
 		<file_encoding>UTF-8</file_encoding>
 	</properties>
 
@@ -60,7 +61,7 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.17</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
@@ -97,7 +98,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.0</version>
 		</dependency>
-		
+
 		<!-- oracle -->
 		<dependency>
 			<groupId>com.oracle</groupId>
@@ -106,7 +107,7 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/ojdbc14-10.2.0.3.0.jar</systemPath>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>yugong</artifactId>
@@ -115,7 +116,7 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/yugong-1.0.3.jar</systemPath>
 		</dependency>
-		
+
 		<!-- test dependency -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -130,4 +131,23 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<compilerVersion>${java.version}</compilerVersion>
+					<optimize>true</optimize>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
