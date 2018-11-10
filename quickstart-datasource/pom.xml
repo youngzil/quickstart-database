@@ -16,10 +16,24 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mysql.java.version>6.0.6</mysql.java.version>
-		<tomcat-jdbc.version>9.0.7</tomcat-jdbc.version>
-		<tomcat-jdbc.version>8.5.30</tomcat-jdbc.version>
-		<tomcat-jdbc.version>8.0.51</tomcat-jdbc.version>
-		<tomcat-jdbc.version>7.0.86</tomcat-jdbc.version>
+
+
+		<tomcat.version>9.0.7</tomcat.version>
+		<tomcat.version>8.0.51</tomcat.version>
+		<tomcat.version>7.0.86</tomcat.version>
+		<tomcat.version>8.5.34</tomcat.version>
+
+		<hikaricp.version>3.2.0</hikaricp.version>
+		<hikaricp.version>2.7.9</hikaricp.version>
+
+		<commons-dbcp2.version>2.5.0</commons-dbcp2.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+
+		<mysql.version>8.0.13</mysql.version>
+		<mysql.version>5.1.47</mysql.version>
+
+		<javassist.version>3.24.0-GA</javassist.version> <!-- Same as Hibernate -->
+
 	</properties>
 
 	<dependencies>
@@ -27,7 +41,6 @@
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
-			<version>3.1.0</version>
 		</dependency>
 
 		<dependency>
@@ -45,13 +58,11 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
-			<version>2.2.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
 		</dependency>
 
 		<dependency>
@@ -69,7 +80,6 @@
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jdbc</artifactId>
-			<version>${tomcat-jdbc.version}</version>
 		</dependency>
 
 		<dependency>
@@ -81,13 +91,11 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.java.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
-			<version>3.22.0-GA</version>
 		</dependency>
 
 		<dependency>
@@ -97,6 +105,11 @@
 			<!-- 设置scope和systemPath，systemPath可以是相对或者绝对路径 -->
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/ojdbc8.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 
 	</dependencies>

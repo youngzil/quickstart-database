@@ -91,6 +91,36 @@ pdb_aimsg=
            )
         )
   )
+  
+  
+pdb_MSPSEC=
+(DESCRIPTION_LIST =
+     (LOAD_BALANCE = off)
+     (FAILOVER = on)
+        (DESCRIPTION =
+           (ADDRESS_LIST =
+              (LOAD_BALANCE=OFF)
+              (FAILOVER=ON)
+              (ADDRESS = (PROTOCOL = TCP)(HOST =10.78.137.110 )(PORT = 1521))
+           )
+           (CONNECT_DATA =
+             (SERVICE_NAME = MSPSEC)
+             (FAILOVER_MODE=(TYPE=session)(METHOD=basic)(RETRIES=4)(DELAY=1))
+           )
+        )
+        (DESCRIPTION =
+           (ADDRESS_LIST =
+              (LOAD_BALANCE=OFF)
+              (FAILOVER=ON)
+              (ADDRESS = (PROTOCOL = TCP)(HOST = 10.78.137.111 )(PORT = 1521))
+           )
+           (CONNECT_DATA =
+              (SERVICE_NAME = MSPSEC)
+              (FAILOVER_MODE=(TYPE=session)(METHOD=basic)(RETRIES=4)(DELAY=1))
+           )
+        )
+  )
+
 
 
 

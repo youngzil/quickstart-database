@@ -31,7 +31,8 @@
 		<module>quickstart-datasource</module>
 		<module>quickstart-sharding-sphere</module>
 		<module>quickstart-thinkjd</module>
-    <module>quickstart-yugong</module>
-  </modules>
+		<module>quickstart-yugong</module>
+		<module>quickstart-druid</module>
+	</modules>
 
 </project>
