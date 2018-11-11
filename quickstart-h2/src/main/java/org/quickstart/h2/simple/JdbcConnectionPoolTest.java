@@ -15,7 +15,7 @@ import org.h2.jdbcx.JdbcConnectionPool;
 /**
  * JdbcConnectionPoolTest
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月11日 上午10:32:59
  * @since 1.0
  */

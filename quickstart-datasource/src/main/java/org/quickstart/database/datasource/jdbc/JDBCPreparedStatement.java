@@ -11,7 +11,7 @@ package org.quickstart.database.datasource.jdbc;
 /**
  * JDBCPreparedStatement 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年10月16日 上午10:03:42 
  * @since 1.0
  */

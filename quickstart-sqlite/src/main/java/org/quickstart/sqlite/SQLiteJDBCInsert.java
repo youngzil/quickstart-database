@@ -15,7 +15,7 @@ import java.sql.Statement;
 /**
  * SQLiteJDBCInsert 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月11日 上午11:05:05 
  * @since 1.0
  */

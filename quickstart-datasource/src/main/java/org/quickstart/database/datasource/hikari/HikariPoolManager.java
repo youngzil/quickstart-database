@@ -11,7 +11,7 @@ package org.quickstart.database.datasource.hikari;
 /**
  * HikariPoolManager 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年4月26日 下午5:20:13 
  * @since 1.0
  */

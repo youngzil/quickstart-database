@@ -15,7 +15,7 @@ import java.sql.SQLException;
 /**
  * MemDB
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月11日 上午9:26:58
  * @since 1.0
  */

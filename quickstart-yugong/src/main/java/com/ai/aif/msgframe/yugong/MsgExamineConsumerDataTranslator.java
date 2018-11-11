@@ -17,7 +17,7 @@ import com.taobao.yugong.translator.DataTranslator;
 /**
  * MsgExamineConsumerDataTranslator
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年7月14日 上午12:07:43
  * @since 1.0
  */

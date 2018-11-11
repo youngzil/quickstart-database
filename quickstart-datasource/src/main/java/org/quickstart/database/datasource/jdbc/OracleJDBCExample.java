@@ -17,7 +17,7 @@ import java.util.Properties;
 /**
  * OracleJDBCExample
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年10月15日 下午8:55:11
  * @since 1.0
  */

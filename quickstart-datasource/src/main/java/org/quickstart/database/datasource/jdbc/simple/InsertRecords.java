@@ -11,7 +11,7 @@ package org.quickstart.database.datasource.jdbc.simple;
 /**
  * InsertRecords 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年10月15日 下午9:50:24 
  * @since 1.0
  */

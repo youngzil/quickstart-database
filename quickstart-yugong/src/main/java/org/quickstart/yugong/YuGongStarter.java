@@ -13,7 +13,7 @@ import com.taobao.yugong.YuGongLauncher;
 /**
  * YuGongStarter
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年7月16日 上午11:29:29
  * @since 1.0
  */

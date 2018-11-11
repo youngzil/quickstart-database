@@ -11,7 +11,7 @@ package com.ai.aif.msgframe.yugong;
 /**
  * MsgExamineProducerDataTranslator 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年7月14日 上午12:08:25 
  * @since 1.0
  */

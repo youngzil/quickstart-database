@@ -16,7 +16,7 @@ import org.apache.tomcat.jdbc.pool.PoolProperties;
 /**
  * TomcatDbcpTest
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年4月26日 下午10:09:46
  * @since 1.0
  */

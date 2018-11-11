@@ -16,7 +16,7 @@ import java.sql.Statement;
 /**
  * CreateTable 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月11日 上午9:29:30 
  * @since 1.0
  */

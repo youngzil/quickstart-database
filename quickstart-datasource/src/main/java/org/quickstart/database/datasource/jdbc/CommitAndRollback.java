@@ -17,7 +17,7 @@ import java.sql.Statement;
 /**
  * CommitAndRollback
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年10月15日 下午9:30:18
  * @since 1.0
  */

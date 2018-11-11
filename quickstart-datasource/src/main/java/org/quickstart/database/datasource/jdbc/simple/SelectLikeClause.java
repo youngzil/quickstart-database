@@ -11,7 +11,7 @@ package org.quickstart.database.datasource.jdbc.simple;
 /**
  * SelectLikeClause 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年10月15日 下午9:53:21 
  * @since 1.0
  */

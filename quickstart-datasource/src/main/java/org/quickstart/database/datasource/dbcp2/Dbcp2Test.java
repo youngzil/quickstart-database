@@ -16,7 +16,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 /**
  * Dbcp2Test
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年4月26日 下午9:53:47
  * @since 1.0
  */

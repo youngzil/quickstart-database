@@ -13,7 +13,7 @@ import java.sql.Connection;
 /**
  * ProxoolTest2
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年4月26日 下午10:04:33
  * @since 1.0
  */

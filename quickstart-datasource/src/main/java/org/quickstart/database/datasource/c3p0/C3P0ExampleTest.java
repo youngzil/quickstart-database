@@ -21,7 +21,7 @@ import com.mchange.v2.c3p0.DataSources;
 /**
  * C3P0ExampleTest
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年4月26日 下午9:16:25
  * @since 1.0
  */

@@ -21,7 +21,7 @@ import com.zaxxer.hikari.HikariDataSource;
 /**
  * HikariCPTest
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年4月26日 下午4:44:03
  * @since 1.0
  */

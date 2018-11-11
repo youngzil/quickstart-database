@@ -17,7 +17,7 @@ import java.sql.Statement;
 /**
  * MemInsertDelete
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月11日 上午9:57:24
  * @since 1.0
  */

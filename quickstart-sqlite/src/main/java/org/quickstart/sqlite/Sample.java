@@ -20,7 +20,7 @@ import org.sqlite.SQLiteConfig;
 /**
  * Sample
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月11日 上午11:09:05
  * @since 1.0
  */

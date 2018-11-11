@@ -17,7 +17,7 @@ import java.sql.Statement;
 /**
  * TryCatchFinally
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年10月15日 下午9:31:56
  * @since 1.0
  */
