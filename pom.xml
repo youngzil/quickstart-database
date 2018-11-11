@@ -34,6 +34,7 @@
 		<module>quickstart-yugong</module>
 		<module>quickstart-druid</module>
     <module>quickstart-h2</module>
+    <module>quickstart-sqlite</module>
   </modules>
 
 </project>
