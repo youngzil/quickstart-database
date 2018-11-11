@@ -33,6 +33,7 @@
 		<module>quickstart-thinkjd</module>
 		<module>quickstart-yugong</module>
 		<module>quickstart-druid</module>
-	</modules>
+    <module>quickstart-h2</module>
+  </modules>
 
 </project>
