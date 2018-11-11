@@ -27,3 +27,4 @@ java -classpath jooq-3.11.7.jar;jooq-meta-3.11.7.jar;jooq-codegen-3.11.7.jar;mys
 UNIX / Linux / Mac中：
 java -classpath jooq-3.11.7.jar:jooq-meta-3.11.7.jar:jooq-codegen-3.11.7.jar:mysql-connector-java-5.1.47.jar:. org.jooq.codegen.GenerationTool library.xml
 
+
