@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.11.0.xsd">
+	<!-- Configure the database connection here -->
+	<jdbc>
+		<driver>com.mysql.jdbc.Driver</driver>
+		<!-- <driver>com.mysql.cj.jdbc.Driver</driver> -->
+		<!-- 数据库url -->
+		<url>jdbc:mysql://10.11.20.83:3306/library?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</url>
+		<!-- <url>jdbc:mysql://localhost:3306/library</url> -->
+		<!-- 数据库账号 -->
+		<user>root</user>
+		<!-- 数据库账号密码 -->
+		<password>root</password>
+	</jdbc>
+
+	<generator>
+		<!-- The default code generator. You can override this one, to generate your own code style. Supported generators: - org.jooq.codegen.JavaGenerator - org.jooq.codegen.ScalaGenerator Defaults to org.jooq.codegen.JavaGenerator -->
+		<name>org.jooq.codegen.JavaGenerator</name>
+
+		<database>
+			<!-- The database type. The format here is: org.util.[database].[database]Database -->
+			<name>org.jooq.meta.mysql.MySQLDatabase</name>
+
+			<!-- The database schema (or in the absence of schema support, in your RDBMS this can be the owner, user, database name) to be generated -->
+			<inputSchema>library</inputSchema>
+
+			<!-- All elements that are generated from your schema (A Java regular expression. Use the pipe to separate several expressions) Watch out for case-sensitivity. Depending on your database, this might be important! -->
+			<includes>.*</includes>
+
+			<!-- All elements that are excluded from your schema (A Java regular expression. Use the pipe to separate several expressions). Excludes match before includes, i.e. excludes have a higher priority -->
+			<excludes></excludes>
+		</database>
+
+		<target>
+			<!-- The destination package of your generated classes (within the destination directory) -->
+			<!-- 生成的包名，生成的类在此包下 -->
+			<packageName>org.quickstart.jooq</packageName>
+
+			<!-- The destination directory of your generated classes. Using Maven directory layout here -->
+			<!-- 输出的目录 -->
+			<directory>/Users/yangzl/git/quickstart-database/quickstart-jooq/src/main/java</directory>
+			<!-- <directory>C:/workspace/MySQLTest/src/main/java</directory> -->
+		</target>
+	</generator>
+</configuration>
