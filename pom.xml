@@ -35,6 +35,7 @@
 		<module>quickstart-druid</module>
     <module>quickstart-h2</module>
     <module>quickstart-sqlite</module>
+    <module>quickstart-jooq</module>
   </modules>
 
 </project>
