@@ -19,8 +19,8 @@
 
 		<jooq.version>3.11.7</jooq.version>
 
-		<mysql.version>8.0.13</mysql.version>
 		<mysql.version>5.1.47</mysql.version>
+		<mysql.version>8.0.13</mysql.version>
 
 	</properties>
 
@@ -45,7 +45,46 @@
 
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jooq</groupId>
+				<artifactId>jooq-codegen-maven</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>${project.groupId}</groupId>
+						<artifactId>${project.artifactId}</artifactId>
+						<version>${project.version}</version>
+						<scope>system</scope>
+						<systemPath>${project.basedir}/target/${project.artifactId}-${project.version}.jar</systemPath>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<configurationFile>src/main/resources/jooqConfig.xml</configurationFile>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
-
-
-

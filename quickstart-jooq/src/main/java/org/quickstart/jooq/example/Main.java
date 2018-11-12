@@ -6,9 +6,9 @@
  * Copyright asiainfo Corporation 2018
  * 版权所有 *
  */
-package org.quickstart.jooq;
+package org.quickstart.jooq.example;
 
-import static org.quickstart.jooq.Tables.AUTHOR;
+import static org.quickstart.jooq.example.generate.Tables.AUTHOR;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

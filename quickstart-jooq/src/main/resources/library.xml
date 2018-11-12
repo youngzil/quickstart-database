@@ -34,7 +34,7 @@
 		<target>
 			<!-- The destination package of your generated classes (within the destination directory) -->
 			<!-- 生成的包名，生成的类在此包下 -->
-			<packageName>org.quickstart.jooq</packageName>
+			<packageName>org.quickstart.jooq.example.generate</packageName>
 
 			<!-- The destination directory of your generated classes. Using Maven directory layout here -->
 			<!-- 输出的目录 -->

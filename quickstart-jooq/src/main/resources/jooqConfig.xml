@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+	<jdbc>
+		<!-- <driver>com.mysql.jdbc.Driver</driver> -->
+		<driver>com.mysql.cj.jdbc.Driver</driver>
+		<!-- 数据库url -->
+		<!-- <url>jdbc:mysql://localhost:3306?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=TRUE&amp;useSSL=false&amp;serverTimezone=UTC</url> -->
+		<url>jdbc:mysql://10.11.20.83:3306/library?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</url>
+		<!-- <url>jdbc:mysql://localhost:3306/library</url> -->
+		<!-- 数据库账号 -->
+		<user>root</user>
+		<!-- 数据库账号密码 -->
+		<password>root</password>
+	</jdbc>
+	<generator>
+		<strategy>
+			<!-- 必须是org.jooq.codegen.GeneratorStrategy接口的子类 -->
+			<name>org.quickstart.jooq.stratege.MyStratege</name>
+		</strategy>
+		<database>
+			<name>org.jooq.meta.mysql.MySQLDatabase</name>
+			<includes>.*</includes>
+			<excludes />
+			<inputSchema>library</inputSchema>
+			<forcedTypes>
+				<forcedType>
+					<name>BOOLEAN</name>
+					<types>(?i:TINYINT(\s*\(\d+\))?(\s*UNSIGNED)?)</types>
+				</forcedType>
+			</forcedTypes>
+		</database>
+		<target>
+			<packageName>org.quickstart.jooq.stratege.generate</packageName>
+			<!-- <directory>src/main/java</directory> -->
+			<directory>/Users/yangzl/git/quickstart-database/quickstart-jooq/src/main/java</directory>
+		</target>
+		<generate>
+			<pojos>true</pojos>
+			<daos>true</daos>
+			<deprecated>false</deprecated>
+		</generate>
+	</generator>
+</configuration>

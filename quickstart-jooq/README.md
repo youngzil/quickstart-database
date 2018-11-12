@@ -3,6 +3,7 @@
 
 http://www.jooq.org
 https://github.com/jOOQ/jOOQ
+http://www.jooq.org/products/
 http://www.jooq.org/learn
 http://www.jooq.org/javadoc/latest/
 https://blog.jooq.org/
