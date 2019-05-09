@@ -14,8 +14,9 @@ DataX 是一个异构数据源离线同步工具，致力于实现包括关系�
 
 
 
+https://github.com/daseECNU/Cedar
 
-
+CEDAR是华东师范大学数据科学与工程学院（简称“DaSE”）基于 OceanBase 0.4.2 研发的可扩展的关系数据库。2016年2月1日，CEDAR项目组完成了CEDAR 0.1 版本的开发与测试，2016年9月26日，CEDAR 0.2 版本发布。2017年9月29日，CEDAR 0.3 版本发布。
 
 
 

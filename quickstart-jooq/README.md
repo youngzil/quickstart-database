@@ -1,14 +1,21 @@
 和Spring整合：quickstart-spring-framework-jooq
-
+和SpringBoot整合：quickstart-spring-boot-jooq
 
 http://www.jooq.org
 https://github.com/jOOQ/jOOQ
 http://www.jooq.org/products/
+
+学习参考
 http://www.jooq.org/learn
 http://www.jooq.org/javadoc/latest/
 https://blog.jooq.org/
+
+代码参考
 http://www.jooq.org/doc/3.11/manual/getting-started/
+https://github.com/jOOQ/jOOQ/tree/master/jOOQ-examples
+
 http://ikaisays.com/2011/11/01/getting-started-with-jooq-a-tutorial/
+http://www.petrikainulainen.net/programming/jooq/using-jooq-with-spring-configuration/
 
 
 jOOQ: The easiest way to write SQL in Java

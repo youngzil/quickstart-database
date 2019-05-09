@@ -1,3 +1,11 @@
+JDBC 链接oracle的三种URL写法
+1.普通SID方式 
+jdbc:oracle:thin:username/password@x.x.x.1:1521:SID 
+2.普通ServerName方式 
+jdbc:oracle:thin:username/password@//x.x.x.1:1522/ABCD 
+3.RAC方式 
+jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=x.x.x.1)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=x.x.x.2)(PORT=1521)))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xxrac)))
+
 格式一: ORACLE JDBC Thin using a Service_Name:    
 jdbc:oracle:thin:@//192.168.6.66:1521/rac  （数据库的服务名Service_name:rac）  
   

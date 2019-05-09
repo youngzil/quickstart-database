@@ -18,7 +18,7 @@ import org.jooq.tools.StringUtils;
 /**
  * MyStratege 
  *  
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年11月12日 上午9:39:33 
  * @since 1.0
  */
