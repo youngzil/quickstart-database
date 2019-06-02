@@ -1,3 +1,11 @@
+JDBC 链接oracle的三种URL写法：SID方式 、ServerName方式、RAC方式 
+
+SID是数据库实例的名字
+Service_name参数，该参数对应一个数据库，而不是一个实例
+一个数据库对应多个实例（SID）
+一个数据库可以对应多个Service_name
+---------------------------------------------------------------------------------------------------------------------
+
 JDBC 链接oracle的三种URL写法
 1.普通SID方式 
 jdbc:oracle:thin:username/password@x.x.x.1:1521:SID 

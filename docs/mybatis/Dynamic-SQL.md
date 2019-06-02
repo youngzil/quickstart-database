@@ -1,17 +1,12 @@
-mysql中 $｛param｝与#｛param｝区别
+mybatis中的 $｛param｝与#｛param｝区别
 batis-dynamic-sql框架
 
 
 ---------------------------------------------------------------------------------------------------------------------
-
 batis-dynamic-sql框架
 
 http://www.mybatis.org/mybatis-dynamic-sql/docs/introduction.html
-
 https://github.com/mybatis/mybatis-dynamic-sql
-
-
-
 https://www.oschina.net/p/mybatis-dynamic-sql
 
 MyBatis Dynamic SQL 详细介绍
