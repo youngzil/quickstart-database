@@ -3,7 +3,7 @@
  * 文件名：MsgExamineConsumerDataTranslator.java
  * 版本信息：
  * 日期：2018年7月14日
- * Copyright asiainfo Corporation 2018
+ * Copyright yangzl Corporation 2018
  * 版权所有 *
  */
 package com.ai.aif.msgframe.yugong;

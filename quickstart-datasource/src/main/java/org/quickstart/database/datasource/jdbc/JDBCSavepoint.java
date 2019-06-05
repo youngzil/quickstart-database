@@ -3,7 +3,7 @@
  * 文件名：JDBCSavepoint.java
  * 版本信息：
  * 日期：2018年10月15日
- * Copyright asiainfo Corporation 2018
+ * Copyright yangzl Corporation 2018
  * 版权所有 *
  */
 package org.quickstart.database.datasource.jdbc;
