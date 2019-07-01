@@ -25,3 +25,4 @@ mongod --dbpath=/Users/yangzl/mysoft/mongodb-osx-x86_64-4.0.10/data/db
 
 默认port=27017 dbpath=/data/db
 
+

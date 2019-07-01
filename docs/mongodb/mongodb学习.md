@@ -14,12 +14,18 @@ https://www.mongodb.com/
 https://www.mongodb.com/cn
 https://docs.mongodb.com/
 https://docs.mongodb.com/manual/
+https://docs.mongodb.com/manual/reference/method/sh.shardCollection/
+中文社区
+http://www.mongoing.com/docs/reference/command/shardCollection.html
+
 
 驱动
 https://mongodb.github.io/mongo-java-driver/
 https://github.com/mongodb/mongo-java-driver
 https://github.com/mongodb/mongo-python-driver
 https://github.com/mongodb/mongo-go-driver
+
+
 
 可视化工具
 https://nosqlbooster.com/
@@ -37,6 +43,43 @@ mongod --dbpath=/Users/yangzl/mysoft/mongodb-osx-x86_64-4.0.10/data/db
 
 默认port=27017 dbpath=/data/db
 
+或者
+brew install mongodb
+
+
+
+启动，-f是--config的缩写
+mongod  -f ${HOME}/mongodb/conf/node3/mongo_conf.conf 
+mongod  -f ${HOME}/mongodb/conf/node3/mongo_db.conf 
+mongos  -f ${HOME}/mongodb/conf/node3/mongo_route.conf 
+
+mongod --config /etc/mongod.conf
+
+
+
+
+以repair 模式启动
+mongod -f /etc/mongod.conf --repair
+
+
+停止进程
+mongod  -f ${HOME}/mongodb/conf/node3/mongo_conf.conf --shutdown
+mongod  -f ${HOME}/mongodb/conf/node3/mongo_db.conf --shutdown
+
+mongod --config /etc/mongod.conf --shutdown
+
+
+
+kill进程
+
+PROCESS_NAME="${HOME}/mongodb/conf/node3/mongo_route.conf"
+CUR_USER=`whoami`
+ps -ef|grep $PROCESS_NAME |grep ${CUR_USER} | grep -v grep | awk '{print $2}' |while read pid
+do
+        kill -9 ${pid} 2>&1 >/dev/null
+        echo "进程名称:${PROCESS_NAME},PID:${pid} 成功停止"
+done
+
 
 
 连接
@@ -45,6 +88,12 @@ mongod --dbpath=/Users/yangzl/mysoft/mongodb-osx-x86_64-4.0.10/data/db
 cd /Users/yangzl/mysoft/mongodb-osx-x86_64-4.0.10/bin
 ./mongo
 默认连接到connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+或者
+mongo 20.26.37.176:38200/esb
+
+
+mongo --help
+
 
 
 
@@ -58,6 +107,19 @@ show dbs 显示所有数据的列表
 
 
 ---------------------------------------------------------------------------------------------------------------------
+
+https://www.cnblogs.com/zhoujinyi/p/4668218.html
+https://docs.mongodb.com/manual/reference/method/sh.shardCollection/
+
+
+shell命令
+1) 分片的配置和查看
+
+① 添加分片：sh.addShard("IP:Port") 
+② 开启分片功能：sh.enableSharding("库名")、sh.shardCollection("库名.集合名",{"key":1})
+  sh.shardCollection("<database>.<collection>", { <shard key> : "hashed" } )
+③ 查看分片状态：sh.status()
+
 
 
 
