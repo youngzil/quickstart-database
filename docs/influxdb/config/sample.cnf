@@ -1,0 +1,540 @@
+### Welcome to the InfluxDB configuration file.
+# influxdb默认的配置项，如果需要修改则去掉#号，修改后重启即可生效
+# The values in this file override the default values used by the system if
+# a config option is not specified. The commented out lines are the configuration
+# field and the default value used. Uncommenting a line and changing the value
+# will change the value used at runtime when the process is restarted.
+# Once every 24 hours InfluxDB will report usage data to usage.influxdata.com
+# The data includes a random ID, os, arch, version, the number of series and other
+# usage data. No data from user databases is ever transmitted.
+# Change this option to true to disable reporting.
+# reporting-disabled = false
+# 设置用户备份与修复（数据）的RPC服务地址
+# Bind address to use for the RPC service for backup and restore.
+# bind-address = "127.0.0.1:8088"
+###
+### [meta]
+### 存储有关InfluxDB集群元数据的 Raft consensus group 的控制参数将在下面被配置。
+### Controls the parameters for the Raft consensus group that stores metadata
+### about the InfluxDB cluster.
+###
+[meta]
+# Where the metadata/raft database is stored
+# 元数据/raft 数据库被存储的路径 即meta目录
+dir = "/var/lib/influxdb/meta"
+# Automatically create a default retention policy when creating a database.
+# 当创建一个新的数据库时自动为其创建一个默认的rentention policy（保留策略）
+# retention-autocreate = true
+# If log messages are printed for the meta service
+# 是否为meta服务打印日志
+# logging-enabled = true
+###
+### [data]
+### 修改InfluxDB的分片数据的具体存放路径，以及这部分数据从WAL（Write Ahead Log）刷新的（策略）
+### 根据系统实际情况配置dir路径
+### Controls where the actual shard data for InfluxDB lives and how it is
+### flushed from the WAL. "dir" may need to be changed to a suitable place
+### for your system, but the WAL settings are an advanced configuration. The
+### defaults should work for most systems.
+###
+[data]
+# The directory where the TSM storage engine stores TSM files.
+# TSM存储引擎存储TSM文件的目录
+dir = "/var/lib/influxdb/data"
+# The directory where the TSM storage engine stores WAL files.
+# TSM存储引擎存储WAL文件的目录
+wal-dir = "/var/lib/influxdb/wal"
+# The amount of time that a write will wait before fsyncing. A duration
+# greater than 0 can be used to batch up multiple fsync calls. This is useful for slower
+# disks or when WAL write contention is seen. A value of 0s fsyncs every write to the WAL.
+# Values in the range of 0-100ms are recommended for non-SSD disks.
+# 这个时间参数是在fsyncing之前一个写入操作将等待的时间。
+# fsync解释为：帧同步脉冲 操作 被同步 把文件在内存中的部分写回磁盘
+# 大于0的参数可以用来整理多重fsync操作。当系统磁盘读写速度较慢或出现WAL写入延缓时，可以考虑配置该参数
+# 对于非固态硬盘，这个参数推荐的配置范围是0~100毫秒
+# wal-fsync-delay = "0s"
+
+# The type of shard index to use for new shards. The default is an in-memory index that is
+# recreated at startup. A value of "tsi1" will use a disk based index that supports higher
+# cardinality datasets.
+# 对于influxdb新产生的分片索引的类型将在这里被设置。初始默认的索引类型是一种 in-memory 索引，如果你修改成
+# tsi1 将会对于高基数数据支持的更好。
+#（high-cardinality 是描述tag rentention-policy measurement组合成series规模的度量值）
+# 修改该参数可以解决内存不足使用磁盘替换
+# index-version = "inmem"
+# Trace logging provides more verbose output around the tsm engine. Turning
+# this on can provide more useful output for debugging tsm engine issues.
+# 打印追踪日志，也就是打印debug日志。如果打开的话会创建大量冗长的、有关tsm存储引擎工作细节的日志。
+# trace-logging-enabled = false
+# Whether queries should be logged before execution. Very useful for troubleshooting, but will
+# log any sensitive data contained within a query.
+# 这个配置决定在执行query查询动作前是否记录为日志。对于解决问题很有帮助
+# 但是会把所有含有query的敏感数据都记录下来
+# query-log-enabled = true
+# Validates incoming writes to ensure keys only have valid unicode characters.
+# This setting will incur a small overhead because every key must be checked.
+# validate-keys = false
+# Settings for the TSM engine（有关TSM存储引擎的设置）
+# CacheMaxMemorySize is the maximum size a shard's cache can
+# reach before it starts rejecting writes.
+# Valid size suffixes are k, m, or g (case insensitive, 1024 = 1k).
+# Values without a size suffix are in bytes.
+# 一个分片在拒接写入之前的最大容量（换言之就是一个分片的最大容量）
+# 这里的体积单位可以是 k m 或者g 并且不区分大小写，如果不写单位就表示byte
+# cache-max-memory-size = "1g"
+# CacheSnapshotMemorySize is the size at which the engine will
+# snapshot the cache and write it to a TSM file, freeing up memory
+# Valid size suffixes are k, m, or g (case insensitive, 1024 = 1k).
+# Values without a size suffix are in bytes.
+# 引擎向TSM文件写入时，快照缓存数据的大小，单位参考cache-max-memory-size
+# cache-snapshot-memory-size = "25m"
+# CacheSnapshotWriteColdDuration is the length of time at
+# which the engine will snapshot the cache and write it to
+# a new TSM file if the shard hasn't received writes or deletes
+# 如果分片（shard）没有接收到写入或删除（请求），引擎向TSM文件写入时候产生的快照缓存文件的时间
+# cache-snapshot-write-cold-duration = "10m"
+# CompactFullWriteColdDuration is the duration at which the engine
+# will compact all TSM files in a shard if it hasn't received a
+# write or delete
+# 若分片没有收到写入或者删除（请求），则在这个参数表示的时间间隔后压缩这个分片中的所有TSM文件
+# compact-full-write-cold-duration = "4h"
+# The maximum number of concurrent full and level compactions that can run at one time. A
+# value of 0 results in 50% of runtime.GOMAXPROCS(0) used at runtime. Any number greater
+# than 0 limits compactions to that value. This setting does not apply
+# to cache snapshotting.
+# 同一时刻，全并发与level compaction的最大数值。（与influxdb并发性能有关）如果将这个参数设为0表示，
+# 在influxdb运时runtime.GOMAXPROCS(0)为50%（这个参数是GO语言设置go进程对cpu核心的使用的）
+# 任何大于0的数值则等同相同的compaction数值，这个设置不影响缓存快照功能
+# max-concurrent-compactions = 0
+# CompactThroughput is the rate limit in bytes per second that we
+# will allow TSM compactions to write to disk. Note that short bursts are allowed
+# to happen at a possibly larger value, set by CompactThroughputBurst
+# compact-throughput = "48m"
+# CompactThroughputBurst is the rate limit in bytes per second that we
+# will allow TSM compactions to write to disk.
+# compact-throughput-burst = "48m"
+# The threshold, in bytes, when an index write-ahead log file will compact
+# into an index file. Lower sizes will cause log files to be compacted more
+# quickly and result in lower heap usage at the expense of write throughput.
+# Higher sizes will be compacted less frequently, store more series in-memory,
+# and provide higher write throughput.
+# Valid size suffixes are k, m, or g (case insensitive, 1024 = 1k).
+# Values without a size suffix are in bytes.
+# max-index-log-file-size = "1m"
+# The maximum series allowed per database before writes are dropped. This limit can prevent
+# high cardinality issues at the database level. This limit can be disabled by setting it to
+# 0.
+# 每个数据库的最大series数值，设置这个数值可以避免高基数问题（就是内存要维护过多series导致OOM）
+# 如果你将其设置为0，则表示禁用该限制
+# max-series-per-database = 1000000
+# The maximum number of tag values per tag that are allowed before writes are dropped. This limit
+# can prevent high cardinality tag values from being written to a measurement. This limit can be
+# disabled by setting it to 0.
+# 对于同一个measurement允许的最大 不同tag数值，功能和上面的一样，防止高基数问题。同样设置为0可以禁用该设置
+# 所以在向influxdb导入数据应该大致考虑下数据库允许的series数与tag数是否满足需求
+# max-values-per-tag = 100000
+# If true, then the mmap advise value MADV_WILLNEED will be provided to the kernel with respect to
+# TSM files. This setting has been found to be problematic on some kernels, and defaults to off.
+# It might help users who have slow disks in some cases.
+# tsm-use-madv-willneed = false
+###
+### [coordinator]
+### 协同器配置，管理集群服务器配置
+### Controls the clustering service configuration.
+###
+[coordinator]
+# The default time a write request will wait until a "timeout" error is returned to the caller.
+# 写入超时时间
+# write-timeout = "10s"
+# The maximum number of concurrent queries allowed to be executing at one time. If a query is
+# executed and exceeds this limit, an error is returned to the caller. This limit can be disabled
+# by setting it to 0.
+# 数据库允许的最大查询并发数，如果达到设置上限后，还有人执行查询操作，那么influxdb将为其返回一个错误。
+# 设置为0则禁用该配置。
+# max-concurrent-queries = 0
+# The maximum time a query will is allowed to execute before being killed by the system. This limit
+# can help prevent run away queries. Setting the value to 0 disables the limit.
+# 一个查询请求在被系统杀死前，被运行执行的最大时间。这个参数可以避免一些 失控的查询行为 对程序可能造成的损害。
+# 比如说过大的查询导致内存不够用而使influxdb崩溃。设置为0则为禁用该配置
+# query-timeout = "0s"
+# The time threshold when a query will be logged as a slow query. This limit can be set to help
+# discover slow or resource intensive queries. Setting the value to 0 disables the slow query logging.
+# 一条查询会被记录为"慢查询"的时间门槛。这个配置可以帮助你找到或区分哪些是慢查询，或者称之为资源密集查询。设置为0则为禁用
+# log-queries-after = "0s"
+# The maximum number of points a SELECT can process. A value of 0 will make
+# the maximum point count unlimited. This will only be checked every second so queries will not
+# be aborted immediately when hitting the limit.
+# SELECT 语句一次可查询的最大points（时间点数据），如果设置为0则表示符合select条件，有多少条记录就返回多少条
+# max-select-point = 0
+# The maximum number of series a SELECT can run. A value of 0 will make the maximum series
+# count unlimited.
+# SELECT 语句可查询series的最大数目
+# max-select-series = 0
+# The maxium number of group by time bucket a SELECT can create. A value of zero will max the maximum
+# number of buckets unlimited.
+# SELECT 语句可创建的时间段限定条件的最大数目
+# max-select-buckets = 0
+###
+### [retention]
+### 保存策略，控制保留策略与清除过期数据
+### Controls the enforcement of retention policies for evicting old data.
+###
+[retention]
+# Determines whether retention policy enforcement enabled.
+# 控制是否启用保存策略
+# enabled = true
+# The interval of time when retention policy enforcement checks run.
+# 系统每隔这个参数的时间就会去检查一下这些保留策略是不是在运行
+# check-interval = "30m"
+###
+### [shard-precreation]
+### 分片预创建阶段
+### 控制分片的预创建，使它们在存储实际数据之前就处于可用状态。
+### Controls the precreation of shards, so they are available before data arrives.
+### Only shards that, after creation, will have both a start- and end-time in the
+### future, will ever be created. Shards are never precreated that would be wholly
+### or partially in the past.
+[shard-precreation]
+# Determines whether shard pre-creation service is enabled.
+# 是否开启分片预创建，默认开启
+# enabled = true
+# The interval of time when the check to pre-create new shards runs.
+# 每隔这个参数的时间就会去检查一下预创建新分片有没有在运行
+# check-interval = "10m"
+# The default period ahead of the endtime of a shard group that its successor
+# group is created.
+# 这个参数控制，在某分片组能存储的截至时间到来之前多久，就创建其继承者（说得很拟人，就是创建新的分片组）
+# advance-period = "30m"
+###
+### Controls the system self-monitoring, statistics and diagnostics.
+### 系统自我监控、数据与诊断功能
+### The internal database for monitoring data is created automatically if
+### if it does not already exist. The target retention within this database
+### is called 'monitor' and is also created with a retention period of 7 days
+### and a replication factor of 1, if it does not exist. In all cases the
+### this retention policy is configured as the default for the database.
+[monitor]
+# Whether to record statistics internally.
+# 是否记录内部统计数据
+# store-enabled = true
+# The destination database for recorded statistics
+# 存储内部统计数据的数据名称
+# store-database = "_internal"
+# The interval at which to record statistics
+# 存储统计数据的时间间隔
+# store-interval = "10s"
+###
+### [http]
+### http设置，设置http端点配置。这些配置与influxdb数据流入流出的基础机制有关
+### Controls how the HTTP endpoints are configured. These are the primary
+### mechanism for getting data into and out of InfluxDB.
+###
+[http]
+# Determines whether HTTP endpoint is enabled.
+# 配置http端点是否启用，默认开启
+# enabled = true
+# Determines whether the Flux query endpoint is enabled.
+# flux-enabled = false
+# The bind address used by the HTTP service.
+# 如果使用HTTP传输服务，绑定端口，默认为8086
+# bind-address = ":8086"
+# Determines whether user authentication is enabled over HTTP/HTTPS.
+# 在HTTP/HTTPS上是否开启用户验证，默认关闭
+# auth-enabled = false
+# The default realm sent back when issuing a basic auth challenge.
+# 当发起一次基础认证所范围的默认领域
+# realm = "InfluxDB"
+# Determines whether HTTP request logging is enabled.
+# 配置HTTP请求是否记录于日志
+# log-enabled = true
+# Determines whether the HTTP write request logs should be suppressed when the log is enabled.
+# suppress-write-log = false
+# When HTTP request logging is enabled, this option specifies the path where
+# log entries should be written. If unspecified, the default is to write to stderr, which
+# intermingles HTTP logs with internal InfluxDB logging.
+#
+# If influxd is unable to access the specified path, it will log an error and fall back to writing
+# the request log to stderr.
+# access-log-path = ""
+# Filters which requests should be logged. Each filter is of the pattern NNN, NNX, or NXX where N is
+# a number and X is a wildcard for any number. To filter all 5xx responses, use the string 5xx.
+# If multiple filters are used, then only one has to match. The default is to have no filters which
+# will cause every request to be printed.
+# access-log-status-filters = []
+# Determines whether detailed write logging is enabled.
+# 配置写入数据的细节内容是否记录于日志，默认为关闭
+# write-tracing = false
+# Determines whether the pprof endpoint is enabled. This endpoint is used for
+# troubleshooting and monitoring.
+# 配置pprof端点是否开启，这个端点用于问题调试与监控
+# pprof-enabled = true
+# Enables a pprof endpoint that binds to localhost:6060 immediately on startup.
+# This is only needed to debug startup issues.
+# debug-pprof-enabled = false
+# Determines whether HTTPS is enabled.
+# 配置HTTPS是否开启，默认为关闭
+# https-enabled = false
+# The SSL certificate to use when HTTPS is enabled.
+# 如果开启HTTPS，需要在这里配置SSL证书地址
+# https-certificate = "/etc/ssl/influxdb.pem"
+# Use a separate private key location.
+# 配置https的本地分离私钥
+# https-private-key = ""
+# The JWT auth shared secret to validate requests using JSON web tokens.
+# JWT认证所使用的JSON网页token
+# shared-secret = ""
+# The default chunk size for result sets that should be chunked.
+# 默认块大小
+# max-row-limit = 0
+# The maximum number of HTTP connections that may be open at once. New connections that
+# would exceed this limit are dropped. Setting this value to 0 disables the limit.
+# 最大可同时创建的HTTP连接数。如果达到此数值，新的HTTP连接会被拒绝。设置为0则禁用该配置
+# max-connection-limit = 0
+# Enable http service over unix domain socket
+# 允许在unix域套接字上启用http服务，默认关闭
+# unix-socket-enabled = false
+# The path of the unix domain socket.
+# unix域套接字路径配置
+# bind-socket = "/var/run/influxdb.sock"
+# The maximum size of a client request body, in bytes. Setting this value to 0 disables the limit.
+# 客户端发送请求的最大体积限制，单位为字节。设置为0则为禁用该配置
+# max-body-size = 25000000
+# The maximum number of writes processed concurrently.
+# Setting this to 0 disables the limit.
+# max-concurrent-write-limit = 0
+# The maximum number of writes queued for processing.
+# Setting this to 0 disables the limit.
+# max-enqueued-write-limit = 0
+# The maximum duration for a write to wait in the queue to be processed.
+# Setting this to 0 or setting max-concurrent-write-limit to 0 disables the limit.
+# enqueued-write-timeout = 0
+###
+### [logging]
+###
+### Controls how the logger emits logs to the output.
+###
+[logging]
+# Determines which log encoder to use for logs. Available options
+# are auto, logfmt, and json. auto will use a more a more user-friendly
+# output format if the output terminal is a TTY, but the format is not as
+# easily machine-readable. When the output is a non-TTY, auto will use
+# logfmt.
+# format = "auto"
+# Determines which level of logs will be emitted. The available levels
+# are error, warn, info, and debug. Logs that are equal to or above the
+# specified level will be emitted.
+# level = "info"
+# Suppresses the logo output that is printed when the program is started.
+# The logo is always suppressed if STDOUT is not a TTY.
+# suppress-logo = false
+###
+### [subscriber]
+### 订阅者，控制订阅功能，是否允许从Influxdb主机上fork整份数据
+### Controls the subscriptions, which can be used to fork a copy of all data
+### received by the InfluxDB host.
+###
+[subscriber]
+# Determines whether the subscriber service is enabled.
+# 是否开启订阅者服务
+# enabled = true
+# The default timeout for HTTP writes to subscribers.
+# 向订阅者通过HTTP写入的超时时间
+# http-timeout = "30s"
+# Allows insecure HTTPS connections to subscribers. This is useful when testing with self-
+# signed certificates.
+# 是否允许向订阅者创建不安全HTTPS连接，在测试自签证书时很有用
+# insecure-skip-verify = false
+# The path to the PEM encoded CA certs file. If the empty string, the default system certs will be used
+# PEM编码CA证书文件的路径，如果为空，则默认的系统证书会被应用
+# ca-certs = ""
+# The number of writer goroutines processing the write channel.
+# 处理写入通道的 go协程数目
+# write-concurrency = 40
+# The number of in-flight writes buffered in the write channel.
+# 在写入通道的写入缓存大小
+# write-buffer-size = 1000
+
+###
+### [[graphite]]
+### 控制一个或多个Graphite数据监听器
+### Controls one or many listeners for Graphite data.
+###
+[[graphite]]
+# Determines whether the graphite endpoint is enabled.
+# 设置graphite端点是否开启
+# enabled = false
+# 数据库名
+# database = "graphite"
+# 保存策略
+# retention-policy = ""
+# 绑定端口
+# bind-address = ":2003"
+# 连接协议
+# protocol = "tcp"
+# 一致性级别
+# consistency-level = "one"
+# 下面的配置是有关于batching的设置。你最好打开这些配置，否则可能会导致丢失metrcis或遇到（influxdb）
+# 性能过低的情况。当有大量数据点要被写入时，Batching会在内存中缓存这些数据点
+# These next lines control how batching works. You should have this enabled
+# otherwise you could get dropped metrics or poor performance. Batching
+# will buffer points in memory if you have many coming in.
+# Flush if this many points get buffered
+# 当这么多数据点被缓存后进行清理或刷新操作（flush）
+# batch-size = 5000
+# number of batches that may be pending in memory
+# 在内存中可被挂起的batch数量
+# batch-pending = 10
+# Flush at least this often even if we haven't hit buffer limit
+# 如果我们没有达到缓存上限，也会以这个时间为最低值进行清理（flush）
+# batch-timeout = "1s"
+# UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.
+# UDP读取缓存大小，0代表采用系统默认值。如果这个值大于系统所设置的最大值，UDP监听器就会失效
+# udp-read-buffer = 0
+### This string joins multiple matching 'measurement' values providing more control over the final measurement name.
+# 这个配置可以提供对 最终measurement名称的控制
+# separator = "."
+### Default tags that will be added to all metrics. These can be overridden at the template level
+### or by tags extracted from metric
+# 修改默认tags，来添加给所有metrics 这些可以被模板等级（template level）或者从metrci中提取的tags所改写
+# tags = ["region=us-east", "zone=1c"]
+### Each template line requires a template pattern. It can have an optional
+### filter before the template and separated by spaces. It can also have optional extra
+### tags following the template. Multiple tags should be separated by commas and no spaces
+### similar to the line protocol format. There can be only one default template.
+# 下面的模板配置，每一行都要求一个模板类型，在模板前可以用空格来分隔一个可选的过滤器。
+# 在下面的模板中还可以有可选的额外tags。和行协议格式（line protocol）一样，用逗号（不要有空格）来分隔多个tags
+# 也可以只有一个默认的模板
+# templates = [
+# "*.app env.service.resource.measurement",
+# # Default template
+# "server.*",
+# ]
+###
+### [collectd]
+### collectd 控制一个或多个collectd 数据监听器
+### Controls one or many listeners for collectd data.
+###
+[[collectd]]
+# enabled = false
+# bind-address = ":25826"
+# database = "collectd"
+# retention-policy = ""
+#
+# The collectd service supports either scanning a directory for multiple types
+# db files, or specifying a single db file.
+# collectd不仅支持扫描一个目录下不同类型的文件，可以只扫描一个指定的db数据库文件
+# typesdb = "/usr/local/share/collectd"
+#
+# 安全级别
+# security-level = "none"
+# 认证文件路径
+# auth-file = "/etc/collectd/auth_file"
+# 这一行和上面graphite一样，描述batch工作的
+# These next lines control how batching works. You should have this enabled
+# otherwise you could get dropped metrics or poor performance. Batching
+# will buffer points in memory if you have many coming in.
+# Flush if this many points get buffered
+# batch-size = 5000
+# Number of batches that may be pending in memory
+# batch-pending = 10
+# Flush at least this often even if we haven't hit buffer limit
+# batch-timeout = "10s"
+# UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.
+# read-buffer = 0
+# Multi-value plugins can be handled two ways.（多值插件(multi-value plugin)可以用两种方式来运行）
+# "split"会将多值插件解析并保存到单独的measurement中
+# "split" will parse and store the multi-value plugin data into separate measurements
+# "join" 则会把它们像一个单值一样解析并保存
+# "join" will parse and store the multi-value plugin as a single multi-value measurement.
+# "split" is the default behavior for backward compatability with previous versions of influxdb.
+# parse-multivalue-plugin = "split"
+###
+### [opentsdb]
+### opentsdb的相关配置
+### Controls one or many listeners for OpenTSDB data.
+###
+[[opentsdb]]
+# enabled = false
+# bind-address = ":4242"
+# database = "opentsdb"
+# retention-policy = ""
+# 一致性等级
+# consistency-level = "one"
+# 是否开启tls安全传输
+# tls-enabled = false
+# 证书路径
+# certificate= "/etc/ssl/influxdb.pem"
+# Log an error for every malformed point.
+# 如果出现畸形、残缺的数据点，则在日志中以error等级记录
+# log-point-errors = true
+# batch相关设置
+# These next lines control how batching works. You should have this enabled
+# otherwise you could get dropped metrics or poor performance. Only points
+# metrics received over the telnet protocol undergo batching.
+# Flush if this many points get buffered
+# batch-size = 1000
+# Number of batches that may be pending in memory
+# batch-pending = 5
+# Flush at least this often even if we haven't hit buffer limit
+# batch-timeout = "1s"
+###
+### [[udp]]
+### 通过UDP协议来监听InfluxDB行协议数据的控制配置
+### Controls the listeners for InfluxDB line protocol data via UDP.
+###
+[[udp]]
+# enabled = false
+# bind-address = ":8089"
+# database = "udp"
+# retention-policy = ""
+# InfluxDB precision for timestamps on received points ("" or "n", "u", "ms", "s", "m", "h")
+# precision = ""
+# These next lines control how batching works. You should have this enabled
+# otherwise you could get dropped metrics or poor performance. Batching
+# will buffer points in memory if you have many coming in.
+# Flush if this many points get buffered
+# batch-size = 5000
+# Number of batches that may be pending in memory
+# batch-pending = 10
+# Will flush at least this often even if we haven't hit buffer limit
+# batch-timeout = "1s"
+# UDP Read buffer size, 0 means OS default. UDP listener will fail if set above OS max.
+# read-buffer = 0
+###
+### [continuous_queries]
+### InfluxDB中的持续查询的相关配置（continuous queries）
+### Controls how continuous queries are run within InfluxDB.
+###
+[continuous_queries]
+# Determines whether the continuous query service is enabled.
+# 是否开启持续查询
+# enabled = true
+# Controls whether queries are logged when executed by the CQ service.
+# 当持续查询被执行时时候记录日志
+# log-enabled = true
+# Controls whether queries are logged to the self-monitoring data store.
+# 控制查询是否被influxdb的自我监控数据所存储
+# query-stats-enabled = false
+# interval for how often continuous queries will be checked if they need to run
+# 如果CQ需要被运行，则对它们进行检查的时间间隔将在这里被设置
+# run-interval = "1s"
+###
+### [tls]
+###
+### Global configuration settings for TLS in InfluxDB.
+###
+[tls]
+# Determines the available set of cipher suites. See https://golang.org/pkg/crypto/tls/#pkg-constants
+# for a list of available ciphers, which depends on the version of Go (use the query
+# SHOW DIAGNOSTICS to see the version of Go used to build InfluxDB). If not specified, uses
+# the default settings from Go's crypto/tls package.
+# ciphers = [
+# "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305",
+# "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+# ]
+# Minimum version of the tls protocol that will be negotiated. If not specified, uses the
+# default settings from Go's crypto/tls package.
+# min-version = "tls1.2"
+# Maximum version of the tls protocol that will be negotiated. If not specified, uses the
+# default settings from Go's crypto/tls package.
+# max-version = "tls1.2"
