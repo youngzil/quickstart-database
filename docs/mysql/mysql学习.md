@@ -11,3 +11,5 @@ mysql> SHOW DATABASES;
 D:\software\mysql-5.6.25-winx64\bin> mysqladmin -u root password "123456";
 
 
+mysql启动
+mysql -h localhost -u root -p

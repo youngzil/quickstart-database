@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- 对应的数据库驱动 -->
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- 数据库密码 -->
+    <property name="hibernate.connection.password">root</property>
+    <!-- 数据库用户名 -->
+    <property name="hibernate.connection.username">root</property>
+    <!-- 数据库url，类似于JDBC中连接数据库的url -->
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shopping?useUnicode=true&characterEncoding=UTF-8</property>
+    <!-- 数据库使用的方言 -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+    <!-- 是否把输出到控制台的sql进行格式化 -->
+    <property name="format_sql">true</property>
+    <!-- 是否将Hibernate运行时的sql输出到控制台 -->
+    <property name="show_sql">true</property>
+    <!-- 自动创建|更新|验证数据库表结构 -->
+    <property name="hbm2ddl.auto">create</property>
+
+  </session-factory>
+
+<!--  <mapping resource="com/imooc/map/User.hbm.xml"/>-->
+
+</hibernate-configuration>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-19 19:59:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+  <class name="org.quickstart.hibernate.xml.model.User" table="USER">
+    <id name="id" type="int">
+      <column name="ID" />
+      <generator class="assigned" />
+    </id>
+    <property name="name" type="java.lang.String">
+      <column name="NAME" />
+    </property>
+    <property name="age" type="int">
+      <column name="AGE" />
+    </property>
+    <property name="sex" type="java.lang.String">
+      <column name="SEX" />
+    </property>
+    <property name="birthday" type="java.util.Date">
+      <column name="BIRTHDAY" />
+    </property>
+    <property name="address" type="java.lang.String">
+      <column name="ADDRESS" />
+    </property>
+  </class>
+</hibernate-mapping>

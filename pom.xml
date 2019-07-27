@@ -42,6 +42,7 @@
     <module>quickstart-influxdb</module>
     <module>quickstart-derby</module>
     <module>quickstart-mysql</module>
+    <module>quickstart-hibernate</module>
   </modules>
 
 </project>

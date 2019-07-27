@@ -90,11 +90,11 @@ cd /Users/yangzl/mysoft/mongodb-osx-x86_64-4.0.10/bin
 默认连接到connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
 或者
 mongo 20.26.37.176:38200/esb
+mongo 20.26.37.177:38201/esb
+mongo 20.26.37.178:38202/esb
 
 
 mongo --help
-
-
 
 
 命令：
@@ -105,6 +105,10 @@ show dbs 显示所有数据的列表
 > use local
 
 
+查询集合
+db.getCollection("AOP_ABILITY_BASEINFO")
+
+db.AOP_ABILITY_BASEINFO.find().count();
 
 ---------------------------------------------------------------------------------------------------------------------
 
