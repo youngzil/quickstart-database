@@ -13,11 +13,13 @@ select * from AOP_ABILITY_PROTOCOL where ABILITY_ID>=100000000800 and ABILITY_ID
 select * from AOP_ABILITY_BASEINFO
 
 dbpath=/app/memdb/mongodb/data/node3/conf
-
 logpath=/app/memdb/mongodb/log/node3/mongo_config.log
-
-
 mongod --repair --dbpath /app/memdb/mongodb/data/node3/conf / --repairpath /app/memdb/mongodb/log/node3/mongo_config.log
+
+
+select  * from AIOSP_CFG.AOP_APPINFO
+
+
 
 select * from AOP_ABILITY_BASEINFO where ABILITY_ID in (100000000800,100000000408)
 
@@ -36,8 +38,32 @@ select * from AOP_ABILITY_EXTINFO where ABILITY_ID in (100000000808,100000000408
 
 select * from AOP_ABILITY_BASEINFO where ABILITY_ID>=100000000800 and ABILITY_ID<=100000000809
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- 报文大小限制修改
 select * from ospgateway.AOP_PARA_DETAIL where PARA_TYPE='AOP_REQUEST';
 update  ospgateway.AOP_PARA_DETAIL set PARA1='115857600' where PARA_TYPE='AOP_REQUEST' and PARA_CODE='MAX_LENGTH';
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+-- 跳过下沙箱测试
+update ospgateway.AOP_APP_IPMLINFO set EXT_A = 'T' where APP_ID = 501080;
+select * from AOP_APP_IPMLINFO where APP_ID = 501080;
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+-- 业务大厅网关前台app发布秘钥变动，可以直接插表解决
+-- 1、使用序列表cfg_id_generator查询出使用的序列
+select * from cfg_id_generator where table_name like 'AOP_APP_IPMLINFO';
+select ospgateway.AOP_APP_IPMLINFO_SEQ.NEXTVAL from dual;
+
+-- 2、应用能力关联表，aop_app_ipmlinfo，EXT_A=T，DISABLED_DATE写个大的失效时间，IMPL_ID是主键
+select  t.*,t.rowid from AIOSP_CFG.AOP_APP_IPMLINFO t;
+
+-- 查询能力id
+SELECT * from aiosp_cfg.AOP_ABILITY_BASEINFO t where t.ability_name='hallCommon_IFileDealCSV_base64PhotoUploadToken';
+
+
+select * from ospgateway.AOP_ABILITY_BASEINFO
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------

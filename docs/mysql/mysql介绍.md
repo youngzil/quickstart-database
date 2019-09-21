@@ -1,4 +1,5 @@
 https://www.mysql.com/
+https://github.com/mysql/mysql-server
 
 中文 MySQL 文档：http://tool.oschina.net/apidocs/apidoc?api=mysql-5.1-zh
 英文 MySQL 文档：http://tool.oschina.net/apidocs/apidoc?api=mysql-5.5-en
@@ -21,6 +22,8 @@ MySQL的特性
 提供TCP/IP、ODBC和JDBC等多种数据库连接途径。
 提供用于管理、检查、优化数据库操作的管理工具。
 可以处理拥有上千万条记录的大型数据库。
+
+
 
 
 

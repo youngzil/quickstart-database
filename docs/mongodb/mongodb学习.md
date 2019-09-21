@@ -19,6 +19,11 @@ https://docs.mongodb.com/manual/reference/method/sh.shardCollection/
 http://www.mongoing.com/docs/reference/command/shardCollection.html
 
 
+linux版本下载：https://www.mongodb.org/dl/linux
+windows版本下载：https://www.mongodb.org/dl/win32
+此页面也可以：https://www.mongodb.com/download-center/community 选择相应版本和系统 进行下载，不过版本不全
+
+
 驱动
 https://mongodb.github.io/mongo-java-driver/
 https://github.com/mongodb/mongo-java-driver
