@@ -83,3 +83,19 @@ STRUCT	java.sql.Struct	SetStruct	updateStruct
 https://www.yiibai.com/jdbc/jdbc_quick_guide.html
 https://www.cnblogs.com/Qian123/p/5339164.html#_label1
 
+---------------------------------------------------------------------------------------------------------------------
+
+
+使用示例
+/Users/yangzl/git/quickstart-database/quickstart-datasource/src/main/java/org/quickstart/database/datasource/datatranslator
+
+
+通过jdbc获取数据库中的表结构 主键 各个表字段类型及应用生成实体类
+https://www.cnblogs.com/lbangel/p/3487796.html
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+

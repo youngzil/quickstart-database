@@ -1,5 +1,8 @@
-原项目地址
-https://gitee.com/youngzil/quickstart-all
+项目地址
+https://github.com/youngzil/quickstart-database
+
+
+
 
 TreeSoft可支持 MySQL，Oracle，PostgreSQL， SQL Server，mongoDB ,Hive, SAP HANA2等异构数据库同时在线管理。
 
