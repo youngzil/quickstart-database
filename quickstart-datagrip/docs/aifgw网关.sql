@@ -1,3 +1,33 @@
+select * from aop_api_apprelation where API_CODE like '%esopGroupBoot'
+
+select * from aop_api_open where API_CODE like 'esop%'
+select * from aop_api_version where API_CODE like 'esop%'
+select * from aop_api_route where API_CODE like 'esop%'
+
+
+select * from aop_api_apprelation where id='1571312958355';
+
+
+select * from aop_api_apprelation where id='1571305256478';
+
+
+select * from aop_api_apprelation where id='1571305653253';
+
+select * from aop_api_apprelation where id=#{id}
+
+
+select * from api_data_sync_notify where PROCESS_STATUS ='X'
+
+
+select * from aop_api_open where API_CODE  like  'hallNpOpenGsm_%'
+
+select count(*) from aop_api_open where API_CODE  like  'hallNpOpenGsm_%'
+
+select count(*) from aop_api_apprelation  where API_CODE  like  'hallNpOpenGsm_%'
+
+select * from aop_api_open WHERE 1=1 AND status in ('2') and API_CODE  like  'hallNpOpenGsm_%'
+
+
 
 
 

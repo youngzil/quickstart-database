@@ -31,7 +31,7 @@ public class HelloJavaDb {
     // URL format is
     // jdbc:derby:<local directory to save data>
     // -------------------------------------------
-    String dbUrl = "jdbc:derby:c:\\Users\\shengw\\MyDB\\demo;create=true";
+    String dbUrl = "jdbc:derby:MyDerbyDB\\demo;create=true";
     // jdbc:derby:memory:demo;create=true
     // jdbc:derby:c:\Users\shengw\MyDB\demo;create=true
     // jdbc:derby:c:\\Users\\shengw\\MyDB\\demo;create=true
