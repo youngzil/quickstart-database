@@ -1,9 +1,8 @@
-DML、DDL、DCL的区别：
-DDL（data definition language）数据库定义语言：CREATE、ALTER、DROP等
-DCL（Data Control Language）数据库控制语言：包括（grant,deny,revoke等）语句
-DML（data manipulation language）数据操纵语言:常用到的 SELECT、UPDATE、INSERT、DELETE。
-
-
+1、DML、DDL、DCL的区别  
+DDL（data definition language）数据库定义语言：CREATE、ALTER、DROP等  
+DCL（Data Control Language）数据库控制语言：包括（grant,deny,revoke等）语句  
+DML（data manipulation language）数据操纵语言:常用到的 SELECT、UPDATE、INSERT、DELETE。  
+  
 
 
 DML、DDL、DCL的区别：

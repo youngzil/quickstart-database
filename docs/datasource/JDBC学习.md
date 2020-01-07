@@ -2,6 +2,7 @@ JDBC规范提供的接口和类
 Statement、PreparedStatement、CallableStatement区别
 
 ---------------------------------------------------------------------------------------------------------------------
+JDBC规范提供的接口和类
 
 JDBC代表Java数据库连接(Java Database Connectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据库连接的API。
 
@@ -31,6 +32,9 @@ PostgreSQL	org.postgresql.Driver	jdbc:postgresql://hostname:port/dbname
 DB2	com.ibm.db2.jdbc.net.DB2Driver	jdbc:db2:hostname:port Number/databaseName
 Sybase	com.sybase.jdbc.SybDriver	jdbc:sybase:Tds:hostname: portNumber/databaseName
 
+
+---------------------------------------------------------------------------------------------------------------------
+Statement、PreparedStatement、CallableStatement区别
 
 在JDBC编程中，常用Statement、PreparedStatement 和 CallableStatement三种方式来执行查询语句，其中 Statement 用于通用查询， PreparedStatement 用于执行参数化查询，而 CallableStatement则是用于存储过程。
 
