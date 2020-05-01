@@ -1,6 +1,14 @@
+COUNT(列名)、COUNT(常量)和COUNT(*)之间的区别
+COUNT(常量) 和 COUNT(*)表示的是直接查询符合条件的数据库表的行数：常量 是一个固定值，肯定不为NULL。*可以理解为查询整行
+COUNT(列名)表示的是查询符合条件的列的值不为NULL的行数。
+
+建议使用COUNT(*)！因为这个是SQL92定义的标准统计行数的语法
+
+
 在InnoDB中COUNT(*)和COUNT(1)实现上没有区别，而且效率一样，
 但是COUNT(字段)需要进行字段的非NULL判断，所以效率会低一些。
 因为COUNT(*)是SQL92定义的标准统计行数的语法，并且效率高，所以请直接使用COUNT(*)查询表的行数！
+
 
 
 关于COUNT函数
@@ -28,6 +36,11 @@ results 7 3 2
 
 
 COUNT(列名)、COUNT(常量)和COUNT(*)之间的区别
+COUNT(常量) 和 COUNT(*)表示的是直接查询符合条件的数据库表的行数：常量 是一个固定值，肯定不为NULL。*可以理解为查询整行
+COUNT(列名)表示的是查询符合条件的列的值不为NULL的行数。
+
+
+
 前面我们提到过COUNT(expr)用于做行数统计，统计的是expr不为NULL的行数，那么COUNT(列名)、 COUNT(常量) 和 COUNT(*)这三种语法中，expr分别是列名、 常量 和 *。
 那么列名、 常量 和 *这三个条件中，常量 是一个固定值，肯定不为NULL。*可以理解为查询整行，所以肯定也不为NULL，那么就只有列名的查询结果有可能是NULL了。
 
@@ -54,5 +67,8 @@ COUNT(字段)
 
 
 参考
+https://developer.aliyun.com/article/756450
 https://mp.weixin.qq.com/s/4atIDmiucqvkw0b2_u8itA
+
+
 
