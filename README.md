@@ -3,6 +3,9 @@ https://github.com/youngzil/quickstart-database
 
 
 
+利用canal采集和解析业务库的binlog日志并投递到kafka中
+
+
 TreeSoft可支持 MySQL，Oracle，PostgreSQL， SQL Server，mongoDB ,Hive, SAP HANA2等异构数据库同时在线管理。
 
 
