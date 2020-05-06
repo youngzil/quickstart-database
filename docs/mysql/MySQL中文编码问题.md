@@ -1,3 +1,6 @@
+MySQL编码问题
+
+
 查看 MySQL 程序编码设置
 修改编码设置的方式有三种
 已创建的数据库的编码
@@ -19,6 +22,10 @@ MySQL在5.5.3之后增加了这个utf8mb4的编码，mb4就是most bytes 4的意
 三个字节的 UTF-8 最大能编码的 Unicode 字符是 0xFFFF，也就是 Unicode 中的基本多文平面（BMP）。
 也就是说，任何不在基本多文平面的 Unicode字符，都无法使用MySQL原有的 utf8 字符集存储。
 这些不在BMP中的字符包括哪些呢？最常见的就是Emoji 表情（Emoji 是一种特殊的 Unicode 编码，常见于 ios 和 android 手机上），和一些不常用的汉字，以及任何新增的 Unicode 字符等等。
+
+
+查看
+永远不要在MySQL中使用utf8，改用utf8mb4.md
 
 
 参考

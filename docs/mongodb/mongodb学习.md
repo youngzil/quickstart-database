@@ -1,4 +1,4 @@
-1、官网、驱动、可视化工具和安装
+1、官网、驱动、安装、连接、可视化工具
 
 
 
@@ -8,7 +8,8 @@ https://mongodb.github.io/mongo-java-driver/3.10/driver/getting-started/quick-st
 
 ![mongodb概念说明](./images/mongodb-concept.png "ReferencePicture")
 ---------------------------------------------------------------------------------------------------------------------
-官网、驱动、可视化工具、安装、连接
+官网、驱动、安装、连接、可视化工具
+
 
 https://www.mongodb.com/
 https://www.mongodb.com/cn

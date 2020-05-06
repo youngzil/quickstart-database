@@ -1,3 +1,5 @@
+mybatis一级缓存二级缓存
+
 
 一级缓存：相对于同一个SqlSession而言
 一级缓存基于sqlSession默认开启,在操作数据库时需要构造SqlSession对象，在对象中有一个HashMap用于存储缓存数据。不同的SqlSession之间的缓存数据区域是互相不影响的。

@@ -9,6 +9,10 @@ SQL唯一约束、主键、外键
 第二范式：在一个数据库表中，一个表中只能保存一种数据，不可以把多种数据保存在同一张数据库表中。也就是一类，比如订单信息和客户信息分成两个表
 第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。
 
+
+UNION/UNION ALL区别
+
+
 Select、where、order by、COUNT、HAVING 、
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -300,9 +304,14 @@ INNER JOIN table2 ON table1.common_field = table2.common_field;
 笛卡尔积记录数是m*n，如两个表关联没有where条件，查询出来的记录是m*n
 SELECT  ID, NAME, AMOUNT, DATE FROM CUSTOMERS, ORDERS;
 
+
+UNION/UNION ALL区别
+
 UNION子句/操作符用于合并两个或多个SELECT语句的结果，不返回任何重复的行。union all直接连接，会返回重复的行
 UNION ALL运算符用于合并两个SELECT语句，包括重复行的结果。 适用于UNION同样的规则也适用于UNION ALL操作。
 要使用UNION，每个SELECT必须选择相同的列数，相同数目的列表达式，相同的数据类型，并让它们以相同的顺序，但它们不必具有相同的长度。
+
+
 
 SQL INTERSECT子句: 是用来将两个SELECT语句，但只从第一个SELECT语句返回完全相同于第二个SELECT语句结果的所有行。 
 SQL EXCEPT子句 : SQL EXCEPT子句/操作符用于合并两个SELECT语句，并从那些没有被第二个SELECT语句返回的第一个SELECT语句返回行。

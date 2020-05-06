@@ -1,5 +1,8 @@
 JDBC规范提供的接口和类 
+常用的JDBC驱动程序名称和数据库URL
+
 Statement、PreparedStatement、CallableStatement区别
+使用预编译的好处：
 
 ---------------------------------------------------------------------------------------------------------------------
 JDBC规范提供的接口和类
@@ -7,7 +10,7 @@ JDBC规范提供的接口和类
 JDBC代表Java数据库连接(Java Database Connectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据库连接的API。
 
 
-JDBC API提供以下接口和类 
+JDBC API提供以下接口和类：DriverManager、Driver、Connection、ResultSet、SQLException
 -DriverManager：此类管理数据库驱动程序列表。 使用通信子协议将来自java应用程序的连接请求与适当的数据库驱动程序进行匹配。在JDBC下识别某个子协议的第一个驱动程序将用于建立数据库连接。
 Driver：此接口处理与数据库服务器的通信。我们很少会直接与Driver对象进行交互。 但会使用DriverManager对象来管理这种类型的对象。 它还提取与使用Driver对象相关的信息。
 Connection：此接口具有用于联系数据库的所有方法。 连接(Connection)对象表示通信上下文，即，与数据库的所有通信仅通过连接对象。Statement：使用从此接口创建的对象将SQL语句提交到数据库。 除了执行存储过程之外，一些派生接口还接受参数。
