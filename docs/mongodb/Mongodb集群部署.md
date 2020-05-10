@@ -361,7 +361,7 @@ noprealloc：不预先分配存储
 
 
 ---------------------------------------------------------------------------------------------------------------------
-
+mongo连接
 
 mongo 远程主机ip或DNS:MongoDB端口号/数据库名 -u user -p password
 
@@ -378,6 +378,17 @@ mongo 192.168.1.100:27017/test
 //指定用户名和密码连接到指定的MongoDB数据库
 mongo 192.168.1.200:27017/test -u user -p password
 
+
+
+查询：
+db.getCollection("AOP_ABILITY_BASEINFO")
+
+db.AOP_ABILITY_BASEINFO.find().count();
+db.AOP_ABILITY_BASEINFO.find({key1:value1, key2:value2}).pretty()
+
+
+类似常规 SQL 语句为： 'where likes>50 AND (by = '菜鸟教程' OR title = 'MongoDB 教程')'
+>db.col.find({"likes": {$gt:50}, $or: [{"by": "菜鸟教程"},{"title": "MongoDB 教程"}]}).pretty()
 
 
 ---------------------------------------------------------------------------------------------------------------------

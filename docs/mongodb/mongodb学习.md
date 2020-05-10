@@ -115,6 +115,7 @@ show dbs 显示所有数据的列表
 db.getCollection("AOP_ABILITY_BASEINFO")
 
 db.AOP_ABILITY_BASEINFO.find().count();
+db.AOP_ABILITY_BASEINFO.find({key1:value1, key2:value2}).pretty()
 
 ---------------------------------------------------------------------------------------------------------------------
 
