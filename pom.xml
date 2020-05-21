@@ -10,7 +10,9 @@
   </parent>-->
 
   <modelVersion>4.0.0</modelVersion>
+  <groupId>org.quickstart</groupId>
   <artifactId>quickstart-database</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>${project.artifactId}-${project.version}</name>
   <url>http://maven.apache.org</url>
@@ -36,6 +38,49 @@
     </dependency>
 
   </dependencies>
+
+  <build>
+  <plugins>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+      <source>1.8</source>
+      <target>1.8</target>
+    </configuration>
+  </plugin>
+  </plugins>
+  </build>
+
+
+  <repositories>
+
+    <repository>
+      <id>alimaven-public</id>
+      <name>aliyun maven</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo1.maven.org/maven2/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+  </repositories>
 
   <modules>
     <module>quickstart-mycat</module>

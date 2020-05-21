@@ -28,19 +28,23 @@
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
+      <version>${jooq.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq-meta</artifactId>
+      <version>${jooq.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq-codegen</artifactId>
+      <version>${jooq.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
 		</dependency>
 
 	</dependencies>
