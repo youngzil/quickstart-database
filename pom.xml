@@ -103,6 +103,7 @@
     <module>quickstart-mysql</module>
     <module>quickstart-hibernate</module>
     <module>quickstart-otter</module>
+    <module>quickstart-seata</module>
   </modules>
 
 </project>
