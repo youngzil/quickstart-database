@@ -88,6 +88,7 @@ done
 
 
 
+mongodb命令.md
 连接
 
 客户端shell连接：
@@ -99,16 +100,29 @@ mongo 20.26.37.176:38200/esb
 mongo 20.26.37.177:38201/esb
 mongo 20.26.37.178:38202/esb
 
+#使用默认端口27017登陆MongoDB
+mongo 127.0.0.1
 
 mongo --help
+
+#使用exit，回车则退出交互环境
 
 
 命令：
 show dbs 显示所有数据的列表
 执行 "db" 命令可以显示当前数据库对象或集合。
 
+查看数据库
+> show dbs
+
 运行"use"命令，可以连接到一个指定的数据库。
 > use local
+
+>使用指定库
+> use wiki
+
+查看所有数据集
+> show collections
 
 
 查询集合
