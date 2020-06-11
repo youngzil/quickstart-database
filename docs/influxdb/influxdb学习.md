@@ -1,6 +1,6 @@
-1、
-2、
-3、
+1、InfluxDB的关键概念
+2、InfluxDB提供三种操作方式：
+3、influxdb时序数据库安装
 4、
 5、
 
@@ -38,7 +38,7 @@ point，就是某个series的同一个时刻的多个field的value，就组成�
 InfluxDb不需要做schema定义，这意味着你可以随意的添加measurements, tags, and fields at any time，
 
 
-
+---------------------------------------------------------------------------------------------------------------------
 InfluxDB提供三种操作方式：
 1）客户端命令行方式
 2）HTTP API接口
@@ -175,17 +175,24 @@ InfluxDB会计算按照时间进行排序的字段值之间的差异，并将这
 
 
 ---------------------------------------------------------------------------------------------------------------------
+
+influxdb时序数据库安装
+
+
 时序数据库：Time Series Database (TSDB)
 https://github.com/influxdata/influxdb
 https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/
 https://docs.influxdata.com/influxdb/v1.7/administration/config
 
+Java客户端
+https://github.com/influxdata/influxdb-java
 
 
 
 安装
 brew update
 brew install influxdb
+brew upgrade  influxdb
 
 
 服务端是influxd
