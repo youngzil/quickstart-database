@@ -15,6 +15,10 @@ UNION/UNION ALL区别
 
 Select、where、order by、COUNT、HAVING 、
 
+
+SELECT INTO 和 INSERT INTO SELECT.md
+
+
 ---------------------------------------------------------------------------------------------------------------------
 https://www.yiibai.com/sql/sql-rdbms-concepts.html
 

@@ -200,6 +200,8 @@ brew upgrade  influxdb
 
 
 启动
+influxd
+
 influxd -config /etc/influxdb/influxdb.conf
 或者
 echo $INFLUXDB_CONFIG_PATH
