@@ -26,3 +26,15 @@ mongod --dbpath=/Users/yangzl/mysoft/mongodb-osx-x86_64-4.0.10/data/db
 默认port=27017 dbpath=/data/db
 
 
+
+
+MongoDB 是一种 NoSQL 数据库，是一个基于分布式文件存储的数据库。由C++语言编写。旨在为应用提供可扩展的高性能数据存储解决方案。
+
+MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库。用户包括 Foursquare、《福布斯》、Pebble、Adobe、领英、eHarmony 及其他公司。提供收费的专业版和企业版。
+
+支持的操作系统：Windows、Linux、OS X 和 Solaris
+相关网站：https://www.mongodb.org
+
+
+
+

@@ -15,9 +15,10 @@ select * from aop_api_apprelation where id='1571305653253';
 
 select * from aop_api_apprelation where id=#{id}
 
+select * from aop_api_open where PROTOCOL like '%%'
+
 
 select * from api_data_sync_notify where PROCESS_STATUS ='X'
-
 
 select * from aop_api_open where API_CODE  like  'hallNpOpenGsm_%'
 
