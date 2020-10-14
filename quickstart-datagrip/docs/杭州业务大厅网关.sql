@@ -19,7 +19,7 @@ mongod --repair --dbpath /app/memdb/mongodb/data/node3/conf / --repairpath /app/
 
 select  * from AIOSP_CFG.AOP_APPINFO
 
-
+select * from aop_api_app where app_code='GW_CUST_PC01'
 
 select * from AOP_ABILITY_BASEINFO where ABILITY_ID in (100000000800,100000000408)
 

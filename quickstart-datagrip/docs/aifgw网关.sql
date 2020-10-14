@@ -1,3 +1,7 @@
+
+select * from aop_page_open where PAGE_CODE='pcHome'
+
+
 select * from aop_api_apprelation where API_CODE like '%esopGroupBoot'
 
 select * from aop_api_open where API_CODE like 'esop%'
@@ -29,7 +33,20 @@ select count(*) from aop_api_apprelation  where API_CODE  like  'hallNpOpenGsm_%
 select * from aop_api_open WHERE 1=1 AND status in ('2') and API_CODE  like  'hallNpOpenGsm_%'
 
 
+ALTER TABLE AOP_API_VERSION ADD COLUMN INTERFACE_TYPE VARCHAR(2) DEFAULT 'B' COMMENT '接口类型';
 
+ALTER TABLE AOP_API_VERSION DROP INTERFACE_TYPE;
+
+ALTER TABLE AOP_API_VERSION ADD COLUMN INTERFACE_TYPE VARCHAR(2) COMMENT '接口类型';
+ALTER TABLE AOP_API_VERSION ALTER COLUMN INTERFACE_TYPE SET DEFAULT 'B';
+
+# 修改字段默认值语法：
+alter table AOP_API_VERSION alter column INTERFACE_TYPE drop default; #(若本身存在默认值，则先删除)
+alter table AOP_API_VERSION alter column INTERFACE_TYPE set default 'B'; #(若本身不存在则可以直接设定)
+
+INSERT INTO aop_api_version (ID, API_CODE, version_NAME, version_PATH, version_METHOD, STATUS, TIME_OUT, RETRY_COUNT, version, version_DESC, CREATE_DATE, ROUTE_STRATEGY, INVOLVED_TYPE, operation, BODY_SIZE) VALUES ('1111112', 'marketAccept_IMarketAcceptCSV_qryOtherMktInfo', '默认版本', '/marketAccept_IMarketAcceptCSV_qryOtherMktInfo', 'POST', '2', 60000, 3, '1.0.0', '营销案', '2019-10-30 15:53:14', 'polling', null, null, null);
+
+#某个字段设置了默认值，若是插入的时候，没有这个字段，就填充默认值，若是有这个字段，但是空，插进去的就是空，不是默认值
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
