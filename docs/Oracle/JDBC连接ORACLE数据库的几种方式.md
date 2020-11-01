@@ -1,4 +1,5 @@
-JDBC 链接oracle的三种URL写法：SID方式 、ServerName方式、RAC方式 
+- [JDBC链接oracle的三种URL写法](#JDBC链接oracle的三种URL写法)
+    - JDBC 链接oracle的三种URL写法：SID方式 、ServerName方式、RAC方式 
 
 SID是数据库实例的名字
 Service_name参数，该参数对应一个数据库，而不是一个实例
@@ -8,7 +9,8 @@ Service_name参数，该参数对应一个数据库，而不是一个实例
 
 ---------------------------------------------------------------------------------------------------------------------
 
-JDBC 链接oracle的三种URL写法
+## JDBC链接oracle的三种URL写法
+
 1.普通SID方式 
 jdbc:oracle:thin:username/password@x.x.x.1:1521:SID 
 2.普通ServerName方式 

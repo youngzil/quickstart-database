@@ -59,18 +59,18 @@ SET PASSWORD = PASSWORD('root');
 设置允许远程连接数据库，命令如下：
 
 先选择数据库：
-use mysql
-update user set user.Host='%' where user.User='root';
+usemysql
+updateusersetuser.Host='%'whereuser.User='root';
 update user set authentication_string=PASSWORD('password') where User='root';
 
 强制刷新数据库
-flush privileges;
+flushprivileges;
 
 可能还需要防火墙端口设置，便于远程访问（防火墙关闭就不用设置了）
 
 开启防火墙：systemctl start firewalld
-[root@rabbitmq2~]$ firewall-cmd --zone=public --add-port=3306/tcp --permanent
-[root@rabbitmq2~]$ firewall-cmd --reload
+[root@rabbitmq2~]$firewall-cmd --zone=public --add-port=3306/tcp --permanent
+[root@rabbitmq2~]$firewall-cmd --reload
 
 开启防火墙mysql3306端口的外部访问
 CentOS升级到7之后，使用firewalld代替了原来的iptables。下面记录如何使用firewalld开放Linux端口

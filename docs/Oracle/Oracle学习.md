@@ -1,3 +1,15 @@
+- [JDBC连接ORACLE数据库的几种方式](JDBC连接ORACLE数据库的几种方式.md)
+- [Oracle中rownum和rowid](Oracle中rownum和rowid.md)
+- [Oracle中复制表结构和表数据](Oracle中复制表结构和表数据.md)
+- [oracle介绍](oracle介绍.md)
+- [oracle开发中序列的使用](oracle开发中序列的使用.md)
+- [Oracle数据库锁查询和解锁](Oracle数据库锁查询和解锁.md)
+- [SQLPLUS](SQLPLUS.md)
+
+
+
+
+
 备份sql：
 create table code_code_bak like code_code;
 insert into CODE_CODE_bak select * from CODE_CODE;

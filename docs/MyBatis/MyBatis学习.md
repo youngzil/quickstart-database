@@ -1,9 +1,12 @@
-mybatis中的 $｛param｝与#｛param｝区别
-batis-dynamic-sql框架
+- [MyBatis Dynamic SQL框架](#MyBatis Dynamic SQL框架)
+- [Mysql中${param}与#{param}区别](#Mysql中${param}与#{param}区别)
+- [mybatis一级缓存二级缓存](mybatis一级缓存二级缓存.md)
+- [mybatis与hibernate的区别](mybatis与hibernate的区别.md)
+
 
 
 ---------------------------------------------------------------------------------------------------------------------
-batis-dynamic-sql框架
+## MyBatis Dynamic SQL框架
 
 http://www.mybatis.org/mybatis-dynamic-sql/docs/introduction.html
 https://github.com/mybatis/mybatis-dynamic-sql
@@ -17,11 +20,11 @@ MyBatis Dynamic SQL 详细介绍
 
 
 ---------------------------------------------------------------------------------------------------------------------
-mysql中 $｛param｝与#｛param｝区别
+## Mysql中${param}与#{param}区别
 
 ${param}传递的参数会被当成sql语句中的一部分，比如传递表名，字段名
 例子：(传入值为id)
-order by ${param} 
+order by ${param}
 则解析成的sql为：
 order by id
 
@@ -37,14 +40,14 @@ select * from table where name = "id"
 sql注入简介
 直接上了百度的例子，感觉一看就清晰明了
 某个网站的登录验证的SQL查询代码为：
-strSQL = "SELECT * FROM users WHERE (name = '" + userName + "') and (pw = '"+ passWord +"');"
+strSQL="SELECT*FROMusersWHERE(name='"+userName+"')and(pw='"+passWord+"');"
 恶意填入
-userName = "1' OR '1'='1";
-与passWord = "1' OR '1'='1";
+userName="1'OR'1'='1";
+与passWord="1'OR'1'='1";
 时，将导致原本的SQL字符串被填为
-strSQL = "SELECT * FROM users WHERE (name = '1' OR '1'='1') and (pw = '1' OR '1'='1');"
+strSQL="SELECT*FROMusersWHERE(name='1'OR'1'='1')and(pw='1'OR'1'='1');"
 也就是实际上运行的SQL命令会变成下面这样的
-strSQL = "SELECT * FROM users;"
+strSQL="SELECT*FROMusers;"
 这样在后台帐号验证的时候巧妙地绕过了检验，达到无账号密码，亦可登录网站。所以SQL注入攻击被俗称为黑客的填空游戏。
 
 

@@ -1,11 +1,12 @@
-JDBC规范提供的接口和类 
-常用的JDBC驱动程序名称和数据库URL
+- [JDBC规范提供的接口和类](#JDBC规范提供的接口和类)
+- [常用的JDBC驱动程序名称和数据库URL](#常用的JDBC驱动程序名称和数据库URL)
+- [Statement、PreparedStatement、CallableStatement区别](#Statement、PreparedStatement、CallableStatement区别)
+    - [使用预编译的好处](#使用预编译的好处)
 
-Statement、PreparedStatement、CallableStatement区别
-使用预编译的好处：
+
 
 ---------------------------------------------------------------------------------------------------------------------
-JDBC规范提供的接口和类
+## JDBC规范提供的接口和类
 
 JDBC代表Java数据库连接(Java Database Connectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据库连接的API。
 
@@ -27,6 +28,9 @@ SQLException：此类处理数据库应用程序中发生的任何错误。
 清理环境：需要明确地关闭所有数据库资源，而不依赖于JVM的垃圾收集。
 
 
+
+## 常用的JDBC驱动程序名称和数据库URL
+
 下表列出了常用的JDBC驱动程序名称和数据库URL。
 RDBMS	JDBC驱动程序名称	URL格式
 MySQL	com.mysql.jdbc.Driver	jdbc:mysql://hostname/databaseName
@@ -37,11 +41,13 @@ Sybase	com.sybase.jdbc.SybDriver	jdbc:sybase:Tds:hostname: portNumber/databaseNa
 
 
 ---------------------------------------------------------------------------------------------------------------------
-Statement、PreparedStatement、CallableStatement区别
+## Statement、PreparedStatement、CallableStatement区别
 
 在JDBC编程中，常用Statement、PreparedStatement 和 CallableStatement三种方式来执行查询语句，其中 Statement 用于通用查询， PreparedStatement 用于执行参数化查询，而 CallableStatement则是用于存储过程。
 
-使用预编译的好处：
+
+
+### 使用预编译的好处
 1：PreparedStatement比 Statement 更快
 使用 PreparedStatement 最重要的一点好处是它拥有更佳的性能优势，SQL语句会预编译在数据库系统中。执行计划同样会被缓存起来，它允许数据库做参数化查询。使用预处理语句比普通的查询更快，因为它做的工作更少（数据库对SQL语句的分析，编译，优化已经在第一次查询前完成了）。
 
