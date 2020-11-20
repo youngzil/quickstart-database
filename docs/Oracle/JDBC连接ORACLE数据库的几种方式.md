@@ -92,7 +92,7 @@ pdb_aimsg=
            (ADDRESS_LIST =
               (LOAD_BALANCE=OFF)
               (FAILOVER=ON)
-              (ADDRESS = (PROTOCOL = TCP)(HOST =hxkzyc2.yw.zj.chinamobile.com)(PORT = 1521))
+              (ADDRESS = (PROTOCOL = TCP)(HOST =hxkzyc2.test.com)(PORT = 1521))
            )
            (CONNECT_DATA =
              (SERVICE_NAME = AIMSG)
@@ -103,7 +103,7 @@ pdb_aimsg=
            (ADDRESS_LIST =
               (LOAD_BALANCE=OFF)
               (FAILOVER=ON)
-              (ADDRESS = (PROTOCOL = TCP)(HOST =hxkzyc1.yw.zj.chinamobile.com )(PORT = 1521))
+              (ADDRESS = (PROTOCOL = TCP)(HOST =hxkzyc1.test.com )(PORT = 1521))
            )
            (CONNECT_DATA =
               (SERVICE_NAME = AIMSG)

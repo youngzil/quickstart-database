@@ -28,7 +28,7 @@ import com.mchange.v2.c3p0.DataSources;
 public class C3P0ExampleTest {
 
     private static String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
-    private static String JDBC_URL = "jdbc:mysql://10.11.20.83:3306/msgframe2.0";
+    private static String JDBC_URL = "jdbc:mysql://10.11.20.83:3306/test2.0";
     private static String USERNAME = "root";
     private static String PASSWORD = "root";
 

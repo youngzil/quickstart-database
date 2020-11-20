@@ -18,7 +18,7 @@ public class ThinkJDTest {
         // HikariDataSource dataSource = new HikariDataSource(config);
         // D.setDataSource(dataSource);
         // 数据库配置(只需调用一次)
-        D.setDbConfig("jdbc:mysql://10.11.20.83:3306/msgframe2.0?useUnicode=true&characterEncoding=UTF-8", "root", "root");
+        D.setDbConfig("jdbc:mysql://10.11.20.83:3306/test2.0?useUnicode=true&characterEncoding=UTF-8", "root", "root");
         // D.setDbConfig("jdbc:mysql://127.0.0.1:3306/thinkjdbc?useUnicode=true&characterEncoding=UTF-8","root","root");
         // 设置表前缀
 //        D.setTablePrefix("jd_");

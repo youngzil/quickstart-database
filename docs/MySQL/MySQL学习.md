@@ -12,7 +12,7 @@
 - [备份表语句区别](备份表语句区别.md)
 - [数据库深度分页](数据库深度分页.md)
 - [永远不要在MySQL中使用utf8，改用utf8mb4](永远不要在MySQL中使用utf8，改用utf8mb4.md)
-
+- [修改字段默认值语法](#修改字段默认值语法)
 
 
 教程
@@ -36,4 +36,20 @@ mysql -h localhost -u root -p
 
 mysql命令教程
 http://c.biancheng.net/view/2419.html
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+## 修改字段默认值语法
+
+alter table 表名 alter column 字段名 drop default; (若本身存在默认值，则先删除)
+
+alter table 表名 alter column 字段名 set default 默认值;(若本身不存在则可以直接设定)
+
+
+
+参考  
+[Mysql 修改字段默认值](https://www.cnblogs.com/hellojesson/p/6025548.html)   
 

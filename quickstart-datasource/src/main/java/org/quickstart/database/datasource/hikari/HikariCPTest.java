@@ -29,7 +29,7 @@ public class HikariCPTest {
 
     private static String sql = "select count(*) as cnt from msg_alarm_config";
     private static String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
-    private static String JDBC_URL = "jdbc:mysql://10.11.20.83:3306/msgframe2.0";
+    private static String JDBC_URL = "jdbc:mysql://10.11.20.83:3306/test2.0";
     // private static String DRIVER_NAME = "org.trafodion.jdbc.t4.T4Driver";
     // private static String JDBC_URL = "jdbc:t4jdbc://192.168.0.16:23400/:";
     private static String USERNAME = "root";

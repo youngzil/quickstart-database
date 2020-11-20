@@ -83,7 +83,7 @@ CentOS升级到7之后，使用firewalld代替了原来的iptables。下面记�
 7、创建数据库
 
 SHOW DATABASES [LIKE '数据库名'];
-CREATE DATABASE aifgwtest;
+CREATE DATABASE test;
 
 
 参考

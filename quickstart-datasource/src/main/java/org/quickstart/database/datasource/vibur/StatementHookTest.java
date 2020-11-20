@@ -89,7 +89,7 @@ public class StatementHookTest {
     protected static final int CONNECTION_TIMEOUT_MS = 5000;
 
     private static String driverClassName = "com.mysql.cj.jdbc.Driver";
-    private static String jdbcUrl = "jdbc:mysql://10.11.20.83:3306/msgframe2.0";
+    private static String jdbcUrl = "jdbc:mysql://10.11.20.83:3306/test2.0";
     private static String username = "root";
     private static String password = "root";
 
