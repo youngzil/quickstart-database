@@ -15,8 +15,8 @@ SQL优化：执行计划和Hint
 
 
 查看执行计划：
-mysql：EXPLAIN 
-oracle：EXPLAIN PLAN FOR 
+mysql：EXPLAIN  
+oracle：EXPLAIN PLAN FOR  
 
 
 
