@@ -5,7 +5,7 @@
 - [Mysql导出表结构及表数据mysqldump用法](Mysql导出表结构及表数据mysqldump用法.md)
 - [MySQL数据库存储引擎](MySQL数据库存储引擎.md)
 - [MYSQL语句](MYSQL语句.md)
-- [MySQL部署](MySQL部署.md)
+- [MySQL部署](deploy/MySQL部署.md)
 - [一次SQL查询使用Limit优化原理分析](一次SQL查询使用Limit优化原理分析.md)
 - [为什么GROUP BY 之后不能直接引用原表中的列](为什么GROUPBY之后不能直接引用原表中的列.md)
 - [在Linux环境下mysql的root密码忘记解决方法](在Linux环境下mysql的root密码忘记解决方法.md)
