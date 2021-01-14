@@ -79,7 +79,6 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
-
   </repositories>
 
   <modules>
@@ -104,6 +103,8 @@
     <module>quickstart-hibernate</module>
     <module>quickstart-otter</module>
     <module>quickstart-seata</module>
+    <module>quickstart-leveldb</module>
+    <module>quickstart-rocksdb</module>
   </modules>
 
 </project>
