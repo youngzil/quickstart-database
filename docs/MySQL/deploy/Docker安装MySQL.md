@@ -55,14 +55,28 @@ CREATE USER 'lims' IDENTIFIED BY '123456';
 创建数据库
 create database limsdb;
 
-授权
+mysql5.X 数据库添加授权  
 grant all privileges on limsdb.* to lims@'%' identified by '123456';
 
-
-
-
-grant all privileges on limsdb.* to 'lims'@'127.0.0.1';
+mysql8.0数据库添加授权  
 grant all privileges on limsdb.* to lims@'%' with grant option;
+
+
+刷新权限  
+mysql> flush privileges;
+
+
+
+
+授权用户
+grant all privileges on news.* to 'news'@'39.15.16.14';
+
+news：用户名； 39.15.16.14：host;可以配置为'%',表示所有的IP地址都可以访问
+
+grant all privileges on limsdb.* to 'lims'@'127.0.0.1';  
+grant all privileges on limsdb.* to lims@'%' with grant option;  
+
+
 
 mysql8.0数据库添加用户和授权
 mysql8有新的安全要求，不能像之前的版本那样一次性创建用户并授权需要先创建用户，再进行授权操作

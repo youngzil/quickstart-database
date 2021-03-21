@@ -1,110 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!--<parent>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.quickstart</groupId>
+        <artifactId>quickstart-all</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
     <groupId>org.quickstart</groupId>
-    <artifactId>quickstart-all</artifactId>
+    <artifactId>quickstart-database</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-&lt;!&ndash;    <relativePath>..</relativePath> &lt;!&ndash; lookup parent from repository &ndash;&gt;&ndash;&gt;
-  </parent>-->
+    <packaging>pom</packaging>
+    <name>${project.artifactId}-${project.version}</name>
+    <url>http://maven.apache.org</url>
+    <description>Demo project for XXX</description>
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.quickstart</groupId>
-  <artifactId>quickstart-database</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>${project.artifactId}-${project.version}</name>
-  <url>http://maven.apache.org</url>
-  <description>Demo project for XXX</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.10</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-
-  </dependencies>
-
-  <build>
-  <plugins>
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <configuration>
-      <source>1.8</source>
-      <target>1.8</target>
-    </configuration>
-  </plugin>
-  </plugins>
-  </build>
-
-
-  <repositories>
-
-    <repository>
-      <id>alimaven-public</id>
-      <name>aliyun maven</name>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-
-    <repository>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo1.maven.org/maven2/</url>
-      <layout>default</layout>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-  <modules>
-    <module>quickstart-mycat</module>
-    <module>quickstart-oceanbase</module>
-    <module>quickstart-zdal</module>
-    <module>quickstart-liquibase</module>
-    <module>quickstart-mybatis-plus</module>
-    <module>quickstart-mybatis</module>
-    <module>quickstart-datasource</module>
-    <module>quickstart-sharding-sphere</module>
-    <module>quickstart-thinkjd</module>
-    <module>quickstart-yugong</module>
-    <module>quickstart-druid</module>
-    <module>quickstart-h2</module>
-    <module>quickstart-sqlite</module>
-    <module>quickstart-jooq</module>
-    <module>quickstart-mongodb</module>
-    <module>quickstart-influxdb</module>
-    <module>quickstart-derby</module>
-    <module>quickstart-mysql</module>
-    <module>quickstart-hibernate</module>
-    <module>quickstart-otter</module>
-    <module>quickstart-seata</module>
-    <module>quickstart-leveldb</module>
-    <module>quickstart-rocksdb</module>
-  </modules>
+    <modules>
+        <module>quickstart-mycat</module>
+        <module>quickstart-oceanbase</module>
+        <module>quickstart-zdal</module>
+        <module>quickstart-liquibase</module>
+        <module>quickstart-mybatis-plus</module>
+        <module>quickstart-mybatis</module>
+        <module>quickstart-datasource</module>
+        <module>quickstart-sharding-sphere</module>
+        <module>quickstart-thinkjd</module>
+        <module>quickstart-yugong</module>
+        <module>quickstart-druid</module>
+        <module>quickstart-h2</module>
+        <module>quickstart-sqlite</module>
+        <module>quickstart-jooq</module>
+        <module>quickstart-mongodb</module>
+        <module>quickstart-influxdb</module>
+        <module>quickstart-derby</module>
+        <module>quickstart-mysql</module>
+        <module>quickstart-hibernate</module>
+        <module>quickstart-otter</module>
+        <module>quickstart-seata</module>
+        <module>quickstart-leveldb</module>
+        <module>quickstart-rocksdb</module>
+        <module>quickstart-canal</module>
+    </modules>
 
 </project>
