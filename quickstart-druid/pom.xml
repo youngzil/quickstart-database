@@ -25,7 +25,7 @@
         <mssql-jdbc.version>6.1.0.jre7</mssql-jdbc.version>
         <mssql-jdbc.version>7.1.2.jre11-preview</mssql-jdbc.version>
 
-        <mysql.version>8.0.13</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <mysql.version>5.1.47</mysql.version>
 
         <sqlite-jdbc.version>3.15.1</sqlite-jdbc.version>
