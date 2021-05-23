@@ -51,6 +51,7 @@ https://db-engines.com/en/ranking
 
 时序数据库：Time Series Database (TSDB)
 https://zhuanlan.zhihu.com/nosql
+[时间序列数据库(TSDB)初识与选择(InfluxDB、OpenTSDB、Druid、Elasticsearch对比)](https://www.cnblogs.com/dhcn/p/12974931.html)
 
 介绍
 https://www.jianshu.com/p/31afb8492eff

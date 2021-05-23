@@ -1,0 +1,76 @@
+version: '3'
+
+services:
+
+  influxdb:
+    image: docker.io/influxdb
+    container_name: tick_influxdb
+    restart: always
+    networks: 
+      - tick_net
+    volumes:
+      - /etc/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:z
+      - /var/lib/influxdb:/var/lib/influxdb:z
+  
+  telegraf:
+    image: docker.io/telegraf
+    container_name: tick_telegraf
+    restart: always
+    depends_on:
+      - influxdb
+    networks:
+      - tick_net
+    volumes:
+      - /etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:z
+      - /var/run/docker.sock:/var/run/docker.sock:z
+  
+  chronograf:
+    image: docker.io/chronograf
+    container_name: tick_chronograf
+    restart: always
+    depends_on:
+      - influxdb
+      - telegraf
+      - kapacitor
+    networks: 
+      - tick_net
+    environment:
+      - influxdb-url:http://influxdb:8086
+    volumes:
+      - /var/lib/chronograf:/var/lib/chronograf:z
+    # ports:
+    #   - "8888:8888"
+
+  kapacitor:
+    image: docker.io/kapacitor
+    container_name: tick_kapacitor
+    restart: always
+    depends_on:
+      - influxdb
+      - telegraf
+    networks:
+      - tick_net
+    volumes:
+      - /var/lib/kapacitor:/var/lib/kapacitor:z
+      - /etc/kapacitor/kapacitor.conf:/etc/kapacitor/kapacitor.conf:z
+  
+  proxy:
+    image: nginx
+    container_name: tick_nginx
+    restart: always
+    depends_on:
+      - influxdb
+      - telegraf
+      - chronograf
+      - kapacitor
+    networks:
+      - tick_net
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:z
+    ports:
+      - 80:80
+      - 443:443
+
+networks: 
+  tick_net:
+    external: false

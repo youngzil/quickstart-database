@@ -1,0 +1,15 @@
+#docker-compose -f docker-compose-single.yml up -d
+
+version: "2"
+services:
+  mysql:
+    restart: always
+    image: mysql:5.7.16
+    container_name: mysql-server
+    volumes:
+      - /data/mysql/db:/var/lib/mysql
+      - /data/mysql/logs:/var/log/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root

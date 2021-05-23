@@ -1,3 +1,10 @@
+- [手动安装](#手动安装)
+- [docker compose安装](#Docker-compose安装)
+
+
+---------------------------------------------------------------------------------------------------------------------
+## 手动安装
+
 1、查看可用的 MySQL 版本
 访问 MySQL 镜像库地址：https://hub.docker.com/_/mysql?tab=tags 。
 
@@ -147,6 +154,45 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 [使用Docker安装、运行mysql](https://www.jianshu.com/p/d9b6bbc7fd77)  
 [docker安装Mysql8.0并挂载外部配置和数据](https://www.cnblogs.com/roinbi/p/12032952.html)  
 [Docker部署安装MySQL5.7](https://www.jianshu.com/p/5c18a4b01dcc)  
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+## Docker compose安装
+
+
+### 单节点部署
+
+
+[How to spin MySQL server with Docker and Docker Compose (plus Adminer)](https://dev.to/sonyarianto/how-to-spin-mysql-server-with-docker-and-docker-compose-33b2)  
+[docker-compose构建mysql服务](https://blog.csdn.net/feinifi/article/details/109399439)  
+[docker-compose 安装redis和mysql](https://www.jianshu.com/p/2711c296cfce)  
+[]()  
+[]()  
+[]()  
+
+
+
+
+### 集群部署
+
+
+[使用Docker-compose部署MySQL测试环境](https://my.oschina.net/u/4408053/blog/4306407)  
+[docker-compose搭建MySQL主从复制集群](https://juejin.cn/post/6844904136115388423)  
+[Docker Compose搭建MySQL主从复制集群](https://zhuanlan.zhihu.com/p/165286048)  
+[]()  
+
+
+
+
+
+
+
+
+
+
 
 
 
