@@ -8,6 +8,7 @@ https://github.com/influxdata/influxdb-java
 
 
 
+[influxdb用rust重写了](https://github.com/influxdata/influxdb_iox)  
 
 
 

@@ -19,16 +19,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <logback.version>1.2.3</logback.version>
 
-    <metrics.version>4.1.19</metrics.version>
   </properties>
 
   <dependencies>
-
-    <dependency>
-      <groupId>io.dropwizard.metrics</groupId>
-      <artifactId>metrics-core</artifactId>
-      <version>${metrics.version}</version>
-    </dependency>
 
     <dependency>
       <groupId>com.izettle</groupId>
@@ -39,7 +32,7 @@
     <dependency>
       <groupId>io.dropwizard.metrics</groupId>
       <artifactId>metrics-jmx</artifactId>
-      <version>4.1.16</version>
+      <version>4.2.3</version>
     </dependency>
 
     <dependency>

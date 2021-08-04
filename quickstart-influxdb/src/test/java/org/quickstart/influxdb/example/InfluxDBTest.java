@@ -20,18 +20,22 @@ public class InfluxDBTest {
         // Create an object to handle the communication with InfluxDB.
         // (best practice tip: reuse the 'influxDB' instance when possible)
         final String serverURL = "http://127.0.0.1:8086", username = "root", password = "root";
+        // 连接influxDB数据库
         final InfluxDB influxDB = InfluxDBFactory.connect(serverURL, username, password);
 
         // Create a database...
         // https://docs.influxdata.com/influxdb/v1.7/query_language/database_management/
         String databaseName = "NOAA_water_database";
+        // 创建数据库
         influxDB.query(new Query("CREATE DATABASE " + databaseName));
         influxDB.setDatabase(databaseName);
 
         // ... and a retention policy, if necessary.
         // https://docs.influxdata.com/influxdb/v1.7/query_language/database_management/
+        // 创建数据保留策略
         String retentionPolicyName = "one_day_only";
-        influxDB.query(new Query("CREATE RETENTION POLICY " + retentionPolicyName + " ON " + databaseName + " DURATION 1d REPLICATION 1 DEFAULT"));
+        String retentionPolicy = "1d";
+        influxDB.query(new Query("CREATE RETENTION POLICY " + retentionPolicyName + " ON " + databaseName + " DURATION "+retentionPolicy+" REPLICATION 1 DEFAULT"));
         influxDB.setRetentionPolicy(retentionPolicyName);
 
         // Enable batch writes to get better performance.

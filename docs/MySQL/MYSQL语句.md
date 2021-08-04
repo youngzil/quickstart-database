@@ -1,3 +1,10 @@
+
+
+替换字段中某个字符串：吧155IP替换成154
+UPDATE op_api_node_group set nodes=REPLACE(nodes,'20.26.39.155','20.26.39.154') where nodes LIKE '%20.26.39.155%';
+
+
+
 SELECT
  t.*
 FROM

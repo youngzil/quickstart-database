@@ -42,6 +42,8 @@ public class InfluxDbHttpSenderTest {
     long now = System.currentTimeMillis();
     Map<String, String> tags = new HashMap<>();
     Map<String, Object> fields = new HashMap<>();
+    fields.put("mean_rate",123);
+    fields.put("mean_rate4",123);
 
     influxDbSender.appendPoints(new InfluxDbPoint("testmeasurement", tags, now, fields));
 

@@ -1,11 +1,17 @@
 - [InfluxDB介绍](#InfluxDB介绍)
-    - [InfluxDB的关键概念InfluxDB的关键概念](#InfluxDB的关键概念)
+    - [InfluxDB的关键概念](#InfluxDB的关键概念)
+    - [InfluxDB原理介绍](#InfluxDB原理介绍)
+    - [无模式设计](#无模式设计)
     - [InfluxDB数据保留策略](#InfluxDB数据保留策略)
     - [InfluxDB连续查询（Continuous Queries）](#InfluxDB连续查询（Continuous Queries）)
 - [InfluxDB提供三种操作方式](#InfluxDB提供三种操作方式)
+  - [1、客户端InfluxQL命令行方式](#1、客户端InfluxQL命令行方式)
+  - [2、HTTP API接口](#2、HTTP-API接口)
+  - [3、各语言API库](#3、各语言API库)
 - [InfluxDB的命令函数](#InfluxDB的命令函数)
 - [Influxdb时序数据库安装](InfluxDB数据库安装.md)
 - [InfluxQL基础语法教程GROUP BY子句](#InfluxQL基础语法教程GROUP-BY子句)
+
 
 
 
@@ -248,7 +254,7 @@ HTTP返回值概要
 
 ---------------------------------------------------------------------------------------------------------------------
 ## InfluxDB提供三种操作方式
-- 1）客户端命令行方式
+- 1）客户端InfluxQL命令行方式
 - 2）HTTP API接口
 - 3）各语言API库
 
@@ -257,7 +263,7 @@ HTTP返回值概要
 
 
 
-#### 1、客户端命令行方式：
+### 1、客户端InfluxQL命令行方式
 
 show databases
 create database testMetric
@@ -332,7 +338,7 @@ InfluxDB属于时序数据库，没有提供修改和删除数据的方法。
 
 
 
-#### 2、HTTP API接口
+### 2、HTTP API接口
 
 1）建立数据库
 curl -POST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE mydb"
@@ -424,7 +430,7 @@ curl -G 'http://localhost:8086/query' --data-urlencode "db=mydb" --data-urlencod
 
 
 
-
+### 3、各语言API库
 
 ---------------------------------------------------------------------------------------------------------------------
 

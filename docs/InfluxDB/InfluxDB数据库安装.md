@@ -1,6 +1,7 @@
 - [Influxdb时序数据库安装](#Influxdb时序数据库安装)
 - [Influxdb Docker安装](#Influxdb使用Docker安装)
 - [Influxdb监控管理界面](#Influxdb监控管理界面)
+- [Influxdb可视化界面](#Influxdb可视化界面)
 
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -249,3 +250,34 @@ https://developer.aliyun.com/article/606242
 
 https://www.cnblogs.com/zouhao/p/9865254.html
 https://www.hangge.com/blog/cache/detail_3002.html
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+## Influxdb可视化界面
+
+[Time Series Admin官网](https://timeseriesadmin.github.io/)  
+[Time Series Admin Github](https://github.com/timeseriesadmin/timeseriesadmin)  
+[]()  
+[]()  
+[]()  
+[]()  
+
+Administration panel and querying interface for InfluxDB databases. (Electron app / Docker container)
+
+
+
+
+Docker
+Time Series Admin is also available as a Docker image. Run it with:
+
+docker run -p 8085:80 -it timeseriesadmin/timeseriesadmin:latest
+
+Then visit http://localhost:8085 to use Time Series Admin from your browser.
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
