@@ -121,12 +121,6 @@
       <systemPath>${project.basedir}/lib/ojdbc8.jar</systemPath>
     </dependency>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13</version>
-    </dependency>
-
   </dependencies>
 
   <build>

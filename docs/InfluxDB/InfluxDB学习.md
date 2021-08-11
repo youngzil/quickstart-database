@@ -299,7 +299,7 @@ drop user "user"  //删除用户
 
 让我们来写入另一笔数据，它包含有两个字段：
 
-> INSERT temperature,machine=unit42,type=assembly external=25,internal=37
+> INSERT temperature.test,machine=unit42,type=assembly external=25,internal=37
 
 查询的时候想要返回所有的字段和tag，可以用*：
 
@@ -313,6 +313,10 @@ InfluxQL还有很多特性和用法没有被提及，包括支持golang样式的
 --
 > SELECT * FROM "cpu_load_short" WHERE "value" > 0.9
 >
+
+use testDB
+# 查询最新的三条数据
+SELECT * FROM weather ORDER BY time DESC LIMIT 3
 
 
 用户管理
@@ -329,6 +333,9 @@ SET PASSWORD FOR admin =’influx@gpscloud’
 
 
 查询数据参考 [measurement查询数据语法](https://docs.influxdata.com/influxdb/v1.8/query_language/explore-data/)
+[InfluxDB查询语句](https://xtutu.gitbooks.io/influxdb-handbook/content/cha.html)  
+
+
 
 
 
