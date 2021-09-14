@@ -1,5 +1,27 @@
 
 
+
+
+## MySQL按天、周、月统计
+
+1）按天统计：
+select DATE_FORMAT(start_time,'%Y%m%d') days,count(product_no) count from test group by days;
+
+2）按周统计：
+select DATE_FORMAT(start_time,'%Y%u') weeks,count(product_no) count from test group by weeks;
+
+3）按月统计:
+select DATE_FORMAT(start_time,'%Y%m') months,count(product_no) count from test group bymonths;
+
+
+————————————————
+版权声明：本文为CSDN博主「-永不妥协-」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lz_peter/article/details/78722976
+
+
+
+
+
 替换字段中某个字符串：吧155IP替换成154
 UPDATE op_api_node_group set nodes=REPLACE(nodes,'20.26.39.155','20.26.39.154') where nodes LIKE '%20.26.39.155%';
 

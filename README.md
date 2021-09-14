@@ -4,7 +4,7 @@ https://github.com/youngzil/quickstart-database
 
 
 
-ostgreSQL是一个功能非常强大的、源代码开放的客户/服务器关系型数据库管理系统。
+PostgreSQL是一个功能非常强大的、源代码开放的客户/服务器关系型数据库管理系统。
 国内知名的华为高斯数据库和腾讯的TBase数据库均是在该数据库的基础上发展而来的。
 国内最牛的阿里OceanBase数据库所有代码都是自主研发的，虽然不是PostgreSQL基础上开发出来的，但应该也借鉴了PostgreSQL的很多特性和有点。
 

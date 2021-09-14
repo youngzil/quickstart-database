@@ -11,7 +11,7 @@
 - [InfluxDB的命令函数](#InfluxDB的命令函数)
 - [Influxdb时序数据库安装](InfluxDB数据库安装.md)
 - [InfluxQL基础语法教程GROUP BY子句](#InfluxQL基础语法教程GROUP-BY子句)
-
+- [Grafana使用InfluxDB数据源以及曲线图表仪表盘配置](#Grafana使用InfluxDB数据源以及曲线图表仪表盘配置)
 
 
 
@@ -265,6 +265,16 @@ HTTP返回值概要
 
 ### 1、客户端InfluxQL命令行方式
 
+schema的语法：
+- SHOW DATABASES
+- SHOW RETENTION POLICIES
+- SHOW SERIES
+- SHOW MEASUREMENTS
+- SHOW TAG KEYS
+- SHOW TAG VALUES
+- SHOW FIELD KEYS
+
+
 show databases
 create database testMetric
 use testMetric
@@ -299,7 +309,7 @@ drop user "user"  //删除用户
 
 让我们来写入另一笔数据，它包含有两个字段：
 
-> INSERT temperature.test,machine=unit42,type=assembly external=25,internal=37
+> INSERT temperature_test,machine=unit42,type=assembly external=25,internal=37
 
 查询的时候想要返回所有的字段和tag，可以用*：
 
@@ -334,7 +344,7 @@ SET PASSWORD FOR admin =’influx@gpscloud’
 
 查询数据参考 [measurement查询数据语法](https://docs.influxdata.com/influxdb/v1.8/query_language/explore-data/)
 [InfluxDB查询语句](https://xtutu.gitbooks.io/influxdb-handbook/content/cha.html)  
-
+[schema查询语法](https://jasper-zhang1.gitbooks.io/influxdb/content/Query_language/schema_exploration.html)
 
 
 
@@ -709,5 +719,13 @@ Fill选项
 [InfluxDB group by time()说明](https://bloodhunter.github.io/2019/03/08/influxdb-group-by-time-shuo-ming/)  
 
 
+---------------------------------------------------------------------------------------------------------------------
+## Grafana使用InfluxDB数据源以及曲线图表仪表盘配置
 
+
+
+[Grafana快速入门：InfluxDB数据源以及曲线图表仪表盘配置](https://blog.csdn.net/tianyeshiye/article/details/91867821)
+[Grafana + InfluxDB 实现 Jmeter 压测的图形化监控](https://cloud.tencent.com/developer/article/1728825)
+[Grafana连接InfluxDB](https://help.aliyun.com/apsara/agile/v_3_4_0_20200930/hitsdb/user-guide/grafana-connection-to-influxdb.html)
+[influxDB+Grafana搭建监控平台](https://www.jianshu.com/p/21ce6ee143f3)
 

@@ -4,6 +4,7 @@
 - [DML命令示例](#DML命令示例)
 - [DCL命令示例](#DCL命令示例)
 - [使用SQL查询所有数据库名和表名](#使用SQL查询所有数据库名和表名)
+- [SQL标准](#SQL标准)
 
 
 
@@ -199,5 +200,19 @@ select column_name, data_type from user_tab_columns where table_name = 'table_na
 
 ---------------------------------------------------------------------------------------------------------------------
 
+## SQL标准
+SQL（Structured Query Language:结构化查询语言）是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。
+
+SQL 的英文全称叫做 Structured QueryLanguage，它有一个很强大的功能，就是能在各个数据表之间进行连接查询（Query）。这是因为 SQL 是建立在关系型数据库基础上的一种语言。  
+关系型数据库的典型数据结构就是数据表，这些数据表的组成都是结构化的（Structured）。你可以把关系模型理解成一个二维表格模型，这个二维表格是由行（row）和列（column）组成的。每一个行（row）就是一条数据，每一列（column）就是数据在某一维度的属性。
+
+SQL连接标准 SQL92\SQL99
+
+
+[SQL wiki](https://zh.wikipedia.org/wiki/SQL)
+[SQL连接标准 SQL92\SQL99](https://www.jianshu.com/p/5c7cf8127109)  
+[温故知新：常用的SQL标准有哪些，在SQL92中是 如何使用连接的？ 原创](https://blog.51cto.com/u_14637764/2521536)  
+[sql92和SQL99的区别](https://blog.csdn.net/wyqwilliam/article/details/103076797)  
+[]()  
 
 
