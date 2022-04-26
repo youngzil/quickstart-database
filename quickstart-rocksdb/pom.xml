@@ -17,13 +17,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <rocksdb.version>7.1.2</rocksdb.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.rocksdb</groupId>
             <artifactId>rocksdbjni</artifactId>
-            <version>6.15.2</version>
         </dependency>
     </dependencies>
 
