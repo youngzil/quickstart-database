@@ -7,6 +7,11 @@ Java客户端
 https://github.com/influxdata/influxdb-java
 
 
+[](https://www.influxdata.com/blog/getting-started-java-influxdb/)  
+[](https://github.com/rvsathe/JavaInfluxDBExample/tree/main/src/main/java/com/example/influxdbexample)
+[InfluxDB：使用java方式执行数据的写入和查询操作(1.8.4版本)](https://blog.csdn.net/weixin_45492007/article/details/114781563)  
+
+
 
 [influxdb用rust重写了](https://github.com/influxdata/influxdb_iox)  
 
