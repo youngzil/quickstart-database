@@ -17,10 +17,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <sqlite-jdbc.version>3.15.1</sqlite-jdbc.version>
-    <sqlite-jdbc.version>3.25.2</sqlite-jdbc.version>
-    <sqlite-jdbc.version>3.28.0</sqlite-jdbc.version>
   </properties>
 
   <dependencies>

@@ -5,7 +5,6 @@
         <groupId>org.quickstart</groupId>
         <artifactId>quickstart-database</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>..</relativePath> <!-- lookup parent from repository -->
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -32,14 +31,7 @@
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.13.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.13.3</version>
         </dependency>
 
     </dependencies>

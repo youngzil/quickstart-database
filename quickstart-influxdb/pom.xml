@@ -17,8 +17,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <logback.version>1.2.3</logback.version>
-
+    <logback.version>1.2.11</logback.version>
+    <influxdb-client.version>6.0.0</influxdb-client.version>
   </properties>
 
   <dependencies>
@@ -44,12 +44,12 @@
     <dependency>
       <groupId>com.influxdb</groupId>
       <artifactId>influxdb-client-flux</artifactId>
-      <version>6.0.0</version>
+      <version>${influxdb-client.version}</version>
     </dependency>
     <dependency>
       <groupId>com.influxdb</groupId>
       <artifactId>influxdb-client-java</artifactId>
-      <version>6.0.0</version>
+      <version>${influxdb-client.version}</version>
     </dependency>
 
     <!--<dependency>
@@ -67,19 +67,18 @@
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
-      <version>4.9.2</version>
     </dependency>
 
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>logging-interceptor</artifactId>
-      <version>4.9.1</version>
+      <version>${okhttp3.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.konghq</groupId>
       <artifactId>unirest-java</artifactId>
-      <version>3.13.8</version>
+      <version>${unirest.version}</version>
     </dependency>
 
     <!-- logback start -->
@@ -98,7 +97,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.7.30</version>
+      <version>${slf4j.version}</version>
     </dependency>
 
     <!-- logback end -->
