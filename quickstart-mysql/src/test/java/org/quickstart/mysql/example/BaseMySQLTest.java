@@ -48,7 +48,7 @@ public class BaseMySQLTest {
 
     // 处理启动参数
     final Set<Object> keys = props.keySet();
-    final Map<String, String> options = new HashMap<String, String>(keys.size());
+    final Map<String, String> options = new HashMap<>(keys.size());
     for (Object key : keys) {
       String val = props.getProperty(key.toString());
       if ("".equals(val)) {
